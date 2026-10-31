@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Python Basics: First Script to Automation — Code.House</title>
+<meta name="description" content="Python syntax, data structures, file handling and virtual environments, aimed at getting you to a script that does real work on your own machine.">
+<link rel="canonical" href="https://code.house/learn/python-basics.html">
+
+<meta name="google-adsense-account" content="ca-pub-6620975821265271">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Code.House">
+<meta property="og:title" content="Python Basics: First Script to Automation — Code.House">
+<meta property="og:description" content="Python syntax, data structures, file handling and virtual environments, aimed at getting you to a script that does real work on your own machine.">
+<meta property="og:url" content="https://code.house/learn/python-basics.html">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M20 4 4 17v19h32V17L20 4Z' fill='%230B0F19' stroke='%23818CF8' stroke-width='3'/%3E%3Cpath d='m15 21-4 4 4 4M25 21l4 4-4 4' stroke='%2322D3EE' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css">
+<script>window.adsbygoogle=window.adsbygoogle||[];try{if(localStorage.getItem('ch-consent')==='essential'){window.adsbygoogle.requestNonPersonalizedAds=1;}}catch(e){}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6620975821265271" crossorigin="anonymous"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Python Basics: First Script to Automation", "description": "Python syntax, data structures, file handling and virtual environments, aimed at getting you to a script that does real work on your own machine.", "dateModified": "2026-10-31", "inLanguage": "en", "author": {"@type": "Organization", "name": "Code.House"}, "publisher": {"@type": "Organization", "name": "Code.House"}, "mainEntityOfPage": "https://code.house/learn/python-basics.html"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="topbar"><a data-partner="1" href="#">Contact, if you are interested in this website / domain name / Sponsorship / Advertisement / Partnership</a></div>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="../index.html"><svg width="30" height="30" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 4 4 17v19h32V17L20 4Z" stroke="#818CF8" stroke-width="2.5" stroke-linejoin="round"/><path d="m15 21-4 4 4 4M25 21l4 4-4 4M22 19l-4 12" stroke="#22D3EE" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Code<b>.</b>House</span></a>
+    <nav class="menu" aria-label="Main"><a href="../">Home</a><a href="../learn/" aria-current="page">Learn</a><a href="../tools/">Tools</a><a href="../roadmap.html">Roadmap</a><a href="../videos.html">Videos</a><a href="../build.html">Build</a><a href="../sponsorship.html">Sponsorship</a><a href="../about.html">About</a><a href="../contact.html">Contact</a></nav>
+    <div class="nav-right">
+      <button class="icon-btn" id="themeBtn" aria-label="Switch between light and dark mode" type="button">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+      </button>
+      <a class="btn btn-primary" href="../build.html">Start a project</a>
+      <button class="icon-btn burger" id="burger" aria-label="Open menu" aria-expanded="false" type="button">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu"><a href="../">Home</a><a href="../learn/">Learn</a><a href="../tools/">Tools</a><a href="../roadmap.html">Roadmap</a><a href="../videos.html">Videos</a><a href="../build.html">Build</a><a href="../sponsorship.html">Sponsorship</a><a href="../about.html">About</a><a href="../contact.html">Contact</a><a href="../build.html">Start a project</a></div>
+</header>
+<main id="main">
+<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a> / <a href="../learn/">Guides</a> / Python Basics</nav>
+
+<article class="narrow">
+<span class="pill">Beginner</span>
+<h1>Python Basics: First Script to Automation</h1>
+<p class="meta">11 minute read · Last updated 2026-10-31 · Written and reviewed by the Code.House editorial team</p>
+<p class="lead">Python's appeal is that a useful script is short. This guide moves quickly through the syntax and spends its time on the parts that make scripts actually useful: data structures, files, errors and environments.</p>
+<nav class="toc" aria-label="On this page"><h2>On this page</h2><ul><li><a href="#values-and-collections">Values and collections</a></li><li><a href="#control-flow-and-functions">Control flow and functions</a></li><li><a href="#files-and-data">Files and data</a></li><li><a href="#handling-errors-deliberately">Handling errors deliberately</a></li><li><a href="#virtual-environments-and-packages">Virtual environments and packages</a></li><li><a href="#a-first-useful-script">A first useful script</a></li></ul></nav>
+<h2 id="values-and-collections">Values and collections</h2>
+<pre><code>name = "Ada"            # str
+count = 42              # int
+rate = 0.075            # float
+active = True           # bool
+
+prices = [10, 25, 40]                    # list — ordered, changeable
+point = (12.5, 48.2)                     # tuple — ordered, fixed
+tags = {"python", "automation"}          # set — unique, unordered
+user = {"name": "Ada", "role": "admin"}  # dict — key/value</code></pre>
+<p>Dictionaries are the workhorse. Reading a key that does not exist raises <code>KeyError</code>, so use <code>user.get("email", "")</code> when a value is optional.</p>
+<p>List comprehensions replace most short loops and read cleanly once they are familiar:</p>
+<pre><code>totals = [p * 1.13 for p in prices if p > 15]</code></pre><h2 id="control-flow-and-functions">Control flow and functions</h2>
+<pre><code>def tax_total(prices, rate=0.13):
+    """Return the sum of prices with tax applied."""
+    return round(sum(p * (1 + rate) for p in prices), 2)
+
+for price in prices:
+    if price > 30:
+        print(f"{price} is above the threshold")
+    elif price == 30:
+        print("exactly at the threshold")
+    else:
+        print(f"{price} is below")</code></pre>
+<p>Indentation is syntax, not style — four spaces per level, consistently. F-strings (<code>f"{value}"</code>) are the current way to build strings and handle formatting too: <code>f"{total:,.2f}"</code> gives thousands separators and two decimals.</p><div class="adbox" data-ad="python-basics-mid" hidden><div class="adlabel">Advertisement</div><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6620975821265271" data-ad-slot="REPLACE_WITH_SLOT_ID" data-ad-format="auto" data-full-width-responsive="true"></ins></div><h2 id="files-and-data">Files and data</h2>
+<p>Reading and writing files uses a context manager, which closes the file even if something fails:</p>
+<pre><code>from pathlib import Path
+import csv, json
+
+text = Path("notes.txt").read_text(encoding="utf-8")
+
+with open("report.csv", newline="", encoding="utf-8") as fh:
+    for row in csv.DictReader(fh):
+        print(row["customer"], row["amount"])
+
+Path("output.json").write_text(json.dumps({"ok": True}, indent=2), encoding="utf-8")</code></pre>
+<p>Always pass <code>encoding="utf-8"</code>. The default differs between operating systems, and that difference is behind a large share of "works on my machine" bugs involving accented characters.</p><h2 id="handling-errors-deliberately">Handling errors deliberately</h2>
+<pre><code>try:
+    value = int(user_input)
+except ValueError:
+    print("That was not a whole number.")
+    value = 0
+finally:
+    print("Done.")</code></pre>
+<p>Catch the specific exception you expect. A bare <code>except:</code> swallows everything, including the keyboard interrupt you press to stop a runaway script, and hides real bugs behind a generic message.</p><h2 id="virtual-environments-and-packages">Virtual environments and packages</h2>
+<p>Installing libraries globally eventually produces two projects that need different versions of the same package. A virtual environment keeps each project's dependencies separate.</p>
+<pre><code>python -m venv .venv
+source .venv/bin/activate        # Windows: .venv\Scripts\activate
+pip install requests pandas
+pip freeze &gt; requirements.txt</code></pre>
+<p>Commit <code>requirements.txt</code>, never the <code>.venv</code> folder. Anyone cloning the project recreates the environment with <code>pip install -r requirements.txt</code>.</p><h2 id="a-first-useful-script">A first useful script</h2>
+<p>This pattern — read files, transform, write a summary — covers a surprising number of real tasks.</p>
+<pre><code>from pathlib import Path
+import csv
+from collections import defaultdict
+
+totals = defaultdict(float)
+
+for path in Path("exports").glob("*.csv"):
+    with path.open(newline="", encoding="utf-8") as fh:
+        for row in csv.DictReader(fh):
+            totals[row["category"]] += float(row["amount"])
+
+with open("summary.csv", "w", newline="", encoding="utf-8") as fh:
+    writer = csv.writer(fh)
+    writer.writerow(["category", "total"])
+    for category, amount in sorted(totals.items(), key=lambda x: -x[1]):
+        writer.writerow([category, round(amount, 2)])
+
+print(f"Wrote {len(totals)} categories.")</code></pre>
+<h2 id="questions">Common questions</h2>
+<h3>Python 3.12, 3.13 or newer?</h3><p>Use the newest version your libraries support. Differences between recent releases rarely affect beginner code, and newer versions bring better error messages.</p><h3>When should I use a class?</h3><p>When data and the functions that operate on it keep travelling together. Until then, functions plus dictionaries are simpler and easier to test.</p>
+<div class="adbox" data-ad="python-basics-end" hidden><div class="adlabel">Advertisement</div><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6620975821265271" data-ad-slot="REPLACE_WITH_SLOT_ID" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+<h2>Keep reading</h2>
+<div class="grid g3"><a class="card" href="git-github.html"><h3>Git and GitHub: The Commands You Need</h3><p class="muted small">A working mental model of Git, the daily command set, branching and pull requests, and how to recover when something goes wrong.</p></a><a class="card" href="apis-explained.html"><h3>APIs Explained: Requests, Auth and Errors</h3><p class="muted small">What an API actually is, how HTTP requests and responses work, how authentication is handled, and how to consume an API without fragile code.</p></a><a class="card" href="choosing-a-tech-stack.html"><h3>Choosing a Tech Stack: A Decision Framework</h3><p class="muted small">How to pick languages, frameworks, databases and hosting based on constraints that matter — team, timeline, traffic and budget — with common stacks compared.</p></a></div>
+<p class="small muted" style="margin-top:24px">Spotted something out of date? <a href="../contact.html">Send a correction</a> — guides are revised rather than quietly deleted.</p>
+</article>
+
+</div>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="logo" href="../index.html"><svg width="30" height="30" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 4 4 17v19h32V17L20 4Z" stroke="#818CF8" stroke-width="2.5" stroke-linejoin="round"/><path d="m15 21-4 4 4 4M25 21l4 4-4 4M22 19l-4 12" stroke="#22D3EE" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Code<b>.</b>House</span></a>
+        <p class="muted" style="margin-top:10px;max-width:300px">Free, plain-English guides, working developer tools and video courses — plus a single place to ask about building software.</p>
+        <p style="margin-top:12px"><a data-partner="1" href="#" class="btn btn-ghost">Sponsorship, advertising, partnership or domain enquiries</a></p>
+      </div>
+      <div><h4>Learn</h4><ul><li><a href="../learn/">All guides</a></li><li><a href="../learn/html-basics.html">HTML basics</a></li><li><a href="../learn/javascript-fundamentals.html">JavaScript</a></li><li><a href="../learn/python-basics.html">Python</a></li><li><a href="../glossary.html">Glossary</a></li></ul></div><div><h4>Tools</h4><ul><li><a href="../tools/">All tools</a></li><li><a href="../tools/json-formatter.html">JSON formatter</a></li><li><a href="../tools/regex-tester.html">Regex tester</a></li><li><a href="../tools/uuid-generator.html">UUID & password</a></li><li><a href="../tools/project-cost-estimator.html">Cost estimator</a></li></ul></div><div><h4>Site</h4><ul><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../build.html">Project enquiries</a></li><li><a href="../sponsorship.html">Sponsorship & advertising</a></li><li><a href="../faq.html">FAQ</a></li></ul></div><div><h4>Legal</h4><ul><li><a href="../legal/privacy.html">Privacy policy</a></li><li><a href="../legal/cookies.html">Cookie policy</a></li><li><a href="../legal/terms.html">Terms of use</a></li><li><a href="../legal/disclaimer.html">Disclaimer</a></li><li><a href="../legal/trademarks.html">Trademark & copyright</a></li><li><a href="../legal/editorial-policy.html">Editorial policy</a></li></ul></div>
+    </div>
+    <div class="legalbar">
+      <p><strong>Trademark and copyright notice.</strong> Code.House is an independent website named after its internet domain. It is not affiliated with, endorsed by, sponsored by or connected to any company, product, service or organisation that uses the name “Codehouse”, “Code House”, “CodeHouse” or any similar mark. All trademarks, service marks, trade names, product names and logos referred to anywhere on this site are the property of their respective owners and are used only for identification and descriptive purposes, which does not imply endorsement. Code samples published here may be used freely. All other original text and design on this site is &copy; <span data-year>2026</span> Code.House. See the <a href="../legal/trademarks.html">trademark and copyright page</a> for details and takedown contacts.</p>
+      <p>This site shows advertising supplied by Google AdSense and third-party vendors, and embeds video hosted on YouTube. Read the <a href="../legal/privacy.html">privacy policy</a>, <a href="../legal/cookies.html">cookie policy</a> and <a href="../legal/disclaimer.html">disclaimer</a>. Information here is educational and general in nature; it is not professional, legal or financial advice.</p>
+      <p>&copy; <span data-year>2026</span> Code.House. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+<div class="cookiebar" id="cookiebar" role="dialog" aria-live="polite" aria-label="Cookie notice">
+  <p>This site uses cookies for advertising and basic preferences. Choose “Essential only” and advertising will be non-personalised. See the <a href="../legal/cookies.html">cookie policy</a>.</p>
+  <div class="btnrow">
+    <button class="btn btn-ghost" id="consentEssential" type="button">Essential only</button>
+    <button class="btn btn-primary" id="consentAll" type="button">Accept all</button>
+  </div>
+</div>
+<script src="../assets/js/site.js" defer></script>
+
+</body>
+</html>
