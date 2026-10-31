@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HTML Basics: The Elements Every Page Uses — Code.House</title>
+<meta name="description" content="A practical introduction to HTML structure, the elements you use every day, forms, and the accessibility habits that keep pages working.">
+<link rel="canonical" href="https://code.house/learn/html-basics.html">
+
+<meta name="google-adsense-account" content="ca-pub-6620975821265271">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Code.House">
+<meta property="og:title" content="HTML Basics: The Elements Every Page Uses — Code.House">
+<meta property="og:description" content="A practical introduction to HTML structure, the elements you use every day, forms, and the accessibility habits that keep pages working.">
+<meta property="og:url" content="https://code.house/learn/html-basics.html">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M20 4 4 17v19h32V17L20 4Z' fill='%230B0F19' stroke='%23818CF8' stroke-width='3'/%3E%3Cpath d='m15 21-4 4 4 4M25 21l4 4-4 4' stroke='%2322D3EE' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css">
+<script>window.adsbygoogle=window.adsbygoogle||[];try{if(localStorage.getItem('ch-consent')==='essential'){window.adsbygoogle.requestNonPersonalizedAds=1;}}catch(e){}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6620975821265271" crossorigin="anonymous"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "HTML Basics: The Elements Every Page Uses", "description": "A practical introduction to HTML structure, the elements you use every day, forms, and the accessibility habits that keep pages working.", "dateModified": "2026-10-31", "inLanguage": "en", "author": {"@type": "Organization", "name": "Code.House"}, "publisher": {"@type": "Organization", "name": "Code.House"}, "mainEntityOfPage": "https://code.house/learn/html-basics.html"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="topbar"><a data-partner="1" href="#">Contact, if you are interested in this website / domain name / Sponsorship / Advertisement / Partnership</a></div>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="../index.html"><svg width="30" height="30" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 4 4 17v19h32V17L20 4Z" stroke="#818CF8" stroke-width="2.5" stroke-linejoin="round"/><path d="m15 21-4 4 4 4M25 21l4 4-4 4M22 19l-4 12" stroke="#22D3EE" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Code<b>.</b>House</span></a>
+    <nav class="menu" aria-label="Main"><a href="../">Home</a><a href="../learn/" aria-current="page">Learn</a><a href="../tools/">Tools</a><a href="../roadmap.html">Roadmap</a><a href="../videos.html">Videos</a><a href="../build.html">Build</a><a href="../sponsorship.html">Sponsorship</a><a href="../about.html">About</a><a href="../contact.html">Contact</a></nav>
+    <div class="nav-right">
+      <button class="icon-btn" id="themeBtn" aria-label="Switch between light and dark mode" type="button">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+      </button>
+      <a class="btn btn-primary" href="../build.html">Start a project</a>
+      <button class="icon-btn burger" id="burger" aria-label="Open menu" aria-expanded="false" type="button">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu"><a href="../">Home</a><a href="../learn/">Learn</a><a href="../tools/">Tools</a><a href="../roadmap.html">Roadmap</a><a href="../videos.html">Videos</a><a href="../build.html">Build</a><a href="../sponsorship.html">Sponsorship</a><a href="../about.html">About</a><a href="../contact.html">Contact</a><a href="../build.html">Start a project</a></div>
+</header>
+<main id="main">
+<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a> / <a href="../learn/">Guides</a> / HTML Basics</nav>
+
+<article class="narrow">
+<span class="pill">Beginner</span>
+<h1>HTML Basics: The Elements Every Page Uses</h1>
+<p class="meta">9 minute read · Last updated 2026-10-31 · Written and reviewed by the Code.House editorial team</p>
+<p class="lead">HTML is the layer that gives a page meaning. Browsers, screen readers, and search crawlers all read the same markup, and each one needs it to say what a thing <em>is</em> before anything can style it or speak it aloud. This guide covers the elements that make up the overwhelming majority of real pages, and the habits that keep markup usable.</p>
+<nav class="toc" aria-label="On this page"><h2>On this page</h2><ul><li><a href="#the-shape-of-a-document">The shape of a document</a></li><li><a href="#structure-elements-worth-knowing">Structure elements worth knowing</a></li><li><a href="#links-images-and-lists">Links, images and lists</a></li><li><a href="#forms-without-frustration">Forms without frustration</a></li><li><a href="#validating-what-you-wrote">Validating what you wrote</a></li></ul></nav>
+<h2 id="the-shape-of-a-document">The shape of a document</h2>
+<p>Every page follows the same skeleton. The <code>&lt;head&gt;</code> holds information about the document — character encoding, title, description, stylesheets. The <code>&lt;body&gt;</code> holds everything a visitor sees.</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;title&gt;Page title shown in the browser tab&lt;/title&gt;
+  &lt;meta name="description" content="One sentence about this page."&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;The main heading&lt;/h1&gt;
+  &lt;p&gt;A paragraph of text.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>Two of those lines are easy to skip and expensive to miss. <code>lang="en"</code> tells screen readers which pronunciation rules to use. The viewport meta tag tells phones to render at device width instead of pretending to be a 980-pixel desktop, and without it every mobile visitor sees a zoomed-out page.</p><h2 id="structure-elements-worth-knowing">Structure elements worth knowing</h2>
+<p>Generic <code>&lt;div&gt;</code> elements work, but they carry no meaning. These do:</p>
+<table>
+<thead><tr><th>Element</th><th>What it marks</th></tr></thead>
+<tbody>
+<tr><td><code>&lt;header&gt;</code></td><td>Introductory content for the page or a section</td></tr>
+<tr><td><code>&lt;nav&gt;</code></td><td>A block of navigation links</td></tr>
+<tr><td><code>&lt;main&gt;</code></td><td>The unique content of this page — one per page</td></tr>
+<tr><td><code>&lt;article&gt;</code></td><td>Something that would still make sense republished alone</td></tr>
+<tr><td><code>&lt;section&gt;</code></td><td>A thematic grouping, normally with its own heading</td></tr>
+<tr><td><code>&lt;aside&gt;</code></td><td>Related but tangential content</td></tr>
+<tr><td><code>&lt;footer&gt;</code></td><td>Closing information for the page or a section</td></tr>
+</tbody></table>
+<p>Headings carry structure too. Use one <code>&lt;h1&gt;</code> for the page subject, then <code>&lt;h2&gt;</code> for major parts and <code>&lt;h3&gt;</code> beneath those. Do not pick a level because of how big the text looks — that is CSS's job. Screen reader users commonly navigate by jumping between headings, so a page with a sensible heading outline is dramatically faster for them to use.</p><div class="adbox" data-ad="html-basics-mid" hidden><div class="adlabel">Advertisement</div><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6620975821265271" data-ad-slot="REPLACE_WITH_SLOT_ID" data-ad-format="auto" data-full-width-responsive="true"></ins></div><h2 id="links-images-and-lists">Links, images and lists</h2>
+<p>Three elements do most of the day-to-day work:</p>
+<pre><code>&lt;a href="/tools/"&gt;Browse the free tools&lt;/a&gt;
+
+&lt;img src="chart.png" alt="Revenue rose from 12% to 31% between March and August"&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Unordered items&lt;/li&gt;
+  &lt;li&gt;where sequence does not matter&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+<p>Link text should describe the destination on its own. "Click here" tells nobody anything, and a screen reader user pulling up a list of links on the page sees ten identical entries. For an image, <code>alt</code> should carry the information the image carries. A decorative flourish gets <code>alt=""</code> so assistive technology skips it; a chart gets a description of what it shows, not the file name.</p>
+<p>Links that open a new tab deserve <code>rel="noopener"</code>. Links to paid or sponsored destinations should carry <code>rel="sponsored nofollow"</code> — search engines ask for it, and advertising programmes expect it.</p><h2 id="forms-without-frustration">Forms without frustration</h2>
+<p>Forms are where most accessibility problems appear. The fix is nearly always the same: connect a real <code>&lt;label&gt;</code> to each field.</p>
+<pre><code>&lt;form&gt;
+  &lt;label for="email"&gt;Email address&lt;/label&gt;
+  &lt;input id="email" name="email" type="email" autocomplete="email" required&gt;
+
+  &lt;label for="budget"&gt;Budget&lt;/label&gt;
+  &lt;select id="budget" name="budget"&gt;
+    &lt;option&gt;Under $10,000&lt;/option&gt;
+    &lt;option&gt;$10,000 to $50,000&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;button type="submit"&gt;Send&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+<p>A placeholder is not a label: it vanishes the moment someone types, and low-contrast grey placeholder text fails readability guidelines. Setting <code>type="email"</code> or <code>type="tel"</code> gives phone users the right keyboard. <code>autocomplete</code> lets browsers fill known values, which measurably increases completion rates on long forms.</p><h2 id="validating-what-you-wrote">Validating what you wrote</h2>
+<p>Browsers repair broken markup silently, so a page can look fine and still be malformed. Run finished pages through the W3C validator, and check the browser's accessibility tree in developer tools. The most common real-world problems are short: missing <code>alt</code>, skipped heading levels, buttons built from <code>&lt;div&gt;</code> elements that keyboards cannot reach, and form fields with no label.</p>
+<p>If you build an interactive control, reach for a real <code>&lt;button&gt;</code> first. It is focusable, it responds to Enter and Space, and it announces itself correctly — all behaviour you would otherwise have to rebuild by hand.</p>
+<h2 id="questions">Common questions</h2>
+<h3>How much HTML do I need before learning CSS?</h3><p>Enough to build a page with headings, paragraphs, links, images, lists and a form — roughly the content of this guide. You will keep learning new elements for years, but that set covers the structure of most pages.</p><h3>Are div elements bad?</h3><p>No. They are the right choice when a wrapper exists purely for layout. The mistake is using them where a meaningful element exists, because then the structure is invisible to anything that is not a sighted mouse user.</p>
+<div class="adbox" data-ad="html-basics-end" hidden><div class="adlabel">Advertisement</div><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6620975821265271" data-ad-slot="REPLACE_WITH_SLOT_ID" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+<h2>Keep reading</h2>
+<div class="grid g3"><a class="card" href="css-layout.html"><h3>CSS Layout: Flexbox and Grid Without the Guesswork</h3><p class="muted small">When to reach for flexbox, when to use grid, and the handful of CSS rules that make a layout responsive on every screen without media-query sprawl.</p></a><a class="card" href="javascript-fundamentals.html"><h3>JavaScript Fundamentals Explained Simply</h3><p class="muted small">The core of modern JavaScript explained plainly — declarations, functions, array methods, promises and async/await, with the mistakes that trip up most beginners.</p></a><a class="card" href="web-performance.html"><h3>Web Performance: What Actually Makes Pages Fast</h3><p class="muted small">Core Web Vitals in plain language, the handful of changes that produce most of the speed gain, and how to measure improvement honestly.</p></a></div>
+<p class="small muted" style="margin-top:24px">Spotted something out of date? <a href="../contact.html">Send a correction</a> — guides are revised rather than quietly deleted.</p>
+</article>
+
+</div>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="logo" href="../index.html"><svg width="30" height="30" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 4 4 17v19h32V17L20 4Z" stroke="#818CF8" stroke-width="2.5" stroke-linejoin="round"/><path d="m15 21-4 4 4 4M25 21l4 4-4 4M22 19l-4 12" stroke="#22D3EE" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Code<b>.</b>House</span></a>
+        <p class="muted" style="margin-top:10px;max-width:300px">Free, plain-English guides, working developer tools and video courses — plus a single place to ask about building software.</p>
+        <p style="margin-top:12px"><a data-partner="1" href="#" class="btn btn-ghost">Sponsorship, advertising, partnership or domain enquiries</a></p>
+      </div>
+      <div><h4>Learn</h4><ul><li><a href="../learn/">All guides</a></li><li><a href="../learn/html-basics.html">HTML basics</a></li><li><a href="../learn/javascript-fundamentals.html">JavaScript</a></li><li><a href="../learn/python-basics.html">Python</a></li><li><a href="../glossary.html">Glossary</a></li></ul></div><div><h4>Tools</h4><ul><li><a href="../tools/">All tools</a></li><li><a href="../tools/json-formatter.html">JSON formatter</a></li><li><a href="../tools/regex-tester.html">Regex tester</a></li><li><a href="../tools/uuid-generator.html">UUID & password</a></li><li><a href="../tools/project-cost-estimator.html">Cost estimator</a></li></ul></div><div><h4>Site</h4><ul><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../build.html">Project enquiries</a></li><li><a href="../sponsorship.html">Sponsorship & advertising</a></li><li><a href="../faq.html">FAQ</a></li></ul></div><div><h4>Legal</h4><ul><li><a href="../legal/privacy.html">Privacy policy</a></li><li><a href="../legal/cookies.html">Cookie policy</a></li><li><a href="../legal/terms.html">Terms of use</a></li><li><a href="../legal/disclaimer.html">Disclaimer</a></li><li><a href="../legal/trademarks.html">Trademark & copyright</a></li><li><a href="../legal/editorial-policy.html">Editorial policy</a></li></ul></div>
+    </div>
+    <div class="legalbar">
+      <p><strong>Trademark and copyright notice.</strong> Code.House is an independent website named after its internet domain. It is not affiliated with, endorsed by, sponsored by or connected to any company, product, service or organisation that uses the name “Codehouse”, “Code House”, “CodeHouse” or any similar mark. All trademarks, service marks, trade names, product names and logos referred to anywhere on this site are the property of their respective owners and are used only for identification and descriptive purposes, which does not imply endorsement. Code samples published here may be used freely. All other original text and design on this site is &copy; <span data-year>2026</span> Code.House. See the <a href="../legal/trademarks.html">trademark and copyright page</a> for details and takedown contacts.</p>
+      <p>This site shows advertising supplied by Google AdSense and third-party vendors, and embeds video hosted on YouTube. Read the <a href="../legal/privacy.html">privacy policy</a>, <a href="../legal/cookies.html">cookie policy</a> and <a href="../legal/disclaimer.html">disclaimer</a>. Information here is educational and general in nature; it is not professional, legal or financial advice.</p>
+      <p>&copy; <span data-year>2026</span> Code.House. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+<div class="cookiebar" id="cookiebar" role="dialog" aria-live="polite" aria-label="Cookie notice">
+  <p>This site uses cookies for advertising and basic preferences. Choose “Essential only” and advertising will be non-personalised. See the <a href="../legal/cookies.html">cookie policy</a>.</p>
+  <div class="btnrow">
+    <button class="btn btn-ghost" id="consentEssential" type="button">Essential only</button>
+    <button class="btn btn-primary" id="consentAll" type="button">Accept all</button>
+  </div>
+</div>
+<script src="../assets/js/site.js" defer></script>
+
+</body>
+</html>
