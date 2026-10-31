@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Regex Tester — Code.House</title>
+<meta name="description" content="Write a pattern, see every match highlighted in your test text, and inspect capture groups as you type.">
+<link rel="canonical" href="https://code.house/tools/regex-tester.html">
+
+<meta name="google-adsense-account" content="ca-pub-6620975821265271">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Code.House">
+<meta property="og:title" content="Regex Tester — Code.House">
+<meta property="og:description" content="Write a pattern, see every match highlighted in your test text, and inspect capture groups as you type.">
+<meta property="og:url" content="https://code.house/tools/regex-tester.html">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M20 4 4 17v19h32V17L20 4Z' fill='%230B0F19' stroke='%23818CF8' stroke-width='3'/%3E%3Cpath d='m15 21-4 4 4 4M25 21l4 4-4 4' stroke='%2322D3EE' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css">
+<script>window.adsbygoogle=window.adsbygoogle||[];try{if(localStorage.getItem('ch-consent')==='essential'){window.adsbygoogle.requestNonPersonalizedAds=1;}}catch(e){}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6620975821265271" crossorigin="anonymous"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Regex Tester", "applicationCategory": "DeveloperApplication", "operatingSystem": "Any browser", "description": "Write a pattern, see every match highlighted in your test text, and inspect capture groups as you type.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="topbar"><a data-partner="1" href="#">Contact, if you are interested in this website / domain name / Sponsorship / Advertisement / Partnership</a></div>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="../index.html"><svg width="30" height="30" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 4 4 17v19h32V17L20 4Z" stroke="#818CF8" stroke-width="2.5" stroke-linejoin="round"/><path d="m15 21-4 4 4 4M25 21l4 4-4 4M22 19l-4 12" stroke="#22D3EE" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Code<b>.</b>House</span></a>
+    <nav class="menu" aria-label="Main"><a href="../">Home</a><a href="../learn/">Learn</a><a href="../tools/" aria-current="page">Tools</a><a href="../roadmap.html">Roadmap</a><a href="../videos.html">Videos</a><a href="../build.html">Build</a><a href="../sponsorship.html">Sponsorship</a><a href="../about.html">About</a><a href="../contact.html">Contact</a></nav>
+    <div class="nav-right">
+      <button class="icon-btn" id="themeBtn" aria-label="Switch between light and dark mode" type="button">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+      </button>
+      <a class="btn btn-primary" href="../build.html">Start a project</a>
+      <button class="icon-btn burger" id="burger" aria-label="Open menu" aria-expanded="false" type="button">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu"><a href="../">Home</a><a href="../learn/">Learn</a><a href="../tools/">Tools</a><a href="../roadmap.html">Roadmap</a><a href="../videos.html">Videos</a><a href="../build.html">Build</a><a href="../sponsorship.html">Sponsorship</a><a href="../about.html">About</a><a href="../contact.html">Contact</a><a href="../build.html">Start a project</a></div>
+</header>
+<main id="main">
+<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a> / <a href="../tools/">Tools</a> / Regex Tester</nav>
+
+<h1>Regular expression tester</h1>
+<p class="lead">Write a pattern, see every match highlighted in your test text, and inspect capture groups as you type.</p>
+
+<div class="card">
+  <label for="rePattern">Pattern</label>
+  <input id="rePattern" spellcheck="false" value="\b(\w+)@(\w+\.\w+)\b">
+  <div class="chips" style="margin-top:10px">
+    <label style="display:flex;gap:6px;align-items:center;font-weight:500"><input type="checkbox" id="flag_g" checked style="width:auto"> global (g)</label>
+    <label style="display:flex;gap:6px;align-items:center;font-weight:500"><input type="checkbox" id="flag_i" style="width:auto"> ignore case (i)</label>
+    <label style="display:flex;gap:6px;align-items:center;font-weight:500"><input type="checkbox" id="flag_m" style="width:auto"> multiline (m)</label>
+    <label style="display:flex;gap:6px;align-items:center;font-weight:500"><input type="checkbox" id="flag_s" style="width:auto"> dot matches newline (s)</label>
+  </div>
+  <label for="reText" style="margin-top:14px">Test text</label>
+  <textarea id="reText" spellcheck="false">Order 1042 shipped. Contact sales@example.com or support@example.org for help.
+Invoice 1043 is overdue. Escalate to billing@example.net.</textarea>
+  <p class="status" id="reStatus" role="status"></p>
+  <label>Matches highlighted</label>
+  <div class="tool-out" id="reOut" style="min-height:120px"></div>
+  <div id="reGroups" style="margin-top:14px"></div>
+</div>
+<p class="small muted">Runs entirely in your browser. Nothing is uploaded.</p>
+<div class="adbox" data-ad="regex-tester-mid" hidden><div class="adlabel">Advertisement</div><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6620975821265271" data-ad-slot="REPLACE_WITH_SLOT_ID" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+<div class="narrow">
+
+<h2>Regular expression building blocks</h2>
+<table>
+<thead><tr><th>Pattern</th><th>Matches</th></tr></thead>
+<tbody>
+<tr><td><code>.</code></td><td>Any character except a newline</td></tr>
+<tr><td><code>\d</code> <code>\w</code> <code>\s</code></td><td>Digit, word character, whitespace</td></tr>
+<tr><td><code>\D</code> <code>\W</code> <code>\S</code></td><td>The inverse of each</td></tr>
+<tr><td><code>[abc]</code></td><td>Any one of a, b or c</td></tr>
+<tr><td><code>[^abc]</code></td><td>Any character except those</td></tr>
+<tr><td><code>*</code> <code>+</code> <code>?</code></td><td>Zero or more, one or more, optional</td></tr>
+<tr><td><code>{2,5}</code></td><td>Between two and five repetitions</td></tr>
+<tr><td><code>^</code> <code>$</code></td><td>Start and end of the string, or of each line with the m flag</td></tr>
+<tr><td><code>\b</code></td><td>A word boundary</td></tr>
+<tr><td><code>(…)</code></td><td>A capture group, available as $1, $2 and so on</td></tr>
+<tr><td><code>(?:…)</code></td><td>A group that does not capture</td></tr>
+<tr><td><code>a|b</code></td><td>Either alternative</td></tr>
+</tbody></table>
+<h2>Greedy and lazy matching</h2>
+<p>Quantifiers are greedy by default: <code>&lt;.+&gt;</code> against <code>&lt;b&gt;hi&lt;/b&gt;</code> matches the entire string, because <code>.+</code> takes as much as it can and then backtracks. Adding a question mark makes it lazy — <code>&lt;.+?&gt;</code> matches just <code>&lt;b&gt;</code>. This single distinction explains most "my pattern matches too much" problems.</p>
+<h2>Patterns worth keeping</h2>
+<ul>
+<li>Trim whitespace: <code>^\s+|\s+$</code></li>
+<li>Collapse repeated spaces: <code>\s{2,}</code></li>
+<li>ISO date: <code>\d{4}-\d{2}-\d{2}</code></li>
+<li>Hex colour: <code>#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})\b</code></li>
+<li>Strip HTML tags, crudely: <code>&lt;[^&gt;]+&gt;</code></li>
+</ul>
+<h2>Where regular expressions are the wrong tool</h2>
+<p>Do not parse HTML, XML or JSON with them — those formats nest, and regular expressions cannot track nesting reliably. Use a parser. Email validation is another trap: the fully correct pattern is enormous, and the practical answer is to check for an @ with something either side and then send a confirmation message.</p>
+<p>Watch out for catastrophic backtracking too. Nested quantifiers such as <code>(a+)+b</code> can take exponential time on a long non-matching input, which is a denial-of-service risk when a pattern is applied to user input on a server.</p>
+<h2>Questions</h2>
+<h3>Which flavour of regex is this?</h3><p>JavaScript's, as implemented by your browser. Python, PCRE and Go differ in lookbehind support and a few escape sequences, though the basics shown here are the same everywhere.</p><h3>Why does my global pattern loop forever?</h3><p>A pattern that can match an empty string never advances the index. This tool guards against it; in your own code, increment lastIndex when a match has zero length.</p>
+<h2>More tools</h2>
+<p><a href="index.html">Browse all free developer tools</a> or read the <a href="../learn/">guides</a>.</p>
+</div>
+<div class="adbox" data-ad="regex-tester-end" hidden><div class="adlabel">Advertisement</div><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6620975821265271" data-ad-slot="REPLACE_WITH_SLOT_ID" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+
+</div>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="logo" href="../index.html"><svg width="30" height="30" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 4 4 17v19h32V17L20 4Z" stroke="#818CF8" stroke-width="2.5" stroke-linejoin="round"/><path d="m15 21-4 4 4 4M25 21l4 4-4 4M22 19l-4 12" stroke="#22D3EE" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Code<b>.</b>House</span></a>
+        <p class="muted" style="margin-top:10px;max-width:300px">Free, plain-English guides, working developer tools and video courses — plus a single place to ask about building software.</p>
+        <p style="margin-top:12px"><a data-partner="1" href="#" class="btn btn-ghost">Sponsorship, advertising, partnership or domain enquiries</a></p>
+      </div>
+      <div><h4>Learn</h4><ul><li><a href="../learn/">All guides</a></li><li><a href="../learn/html-basics.html">HTML basics</a></li><li><a href="../learn/javascript-fundamentals.html">JavaScript</a></li><li><a href="../learn/python-basics.html">Python</a></li><li><a href="../glossary.html">Glossary</a></li></ul></div><div><h4>Tools</h4><ul><li><a href="../tools/">All tools</a></li><li><a href="../tools/json-formatter.html">JSON formatter</a></li><li><a href="../tools/regex-tester.html">Regex tester</a></li><li><a href="../tools/uuid-generator.html">UUID & password</a></li><li><a href="../tools/project-cost-estimator.html">Cost estimator</a></li></ul></div><div><h4>Site</h4><ul><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../build.html">Project enquiries</a></li><li><a href="../sponsorship.html">Sponsorship & advertising</a></li><li><a href="../faq.html">FAQ</a></li></ul></div><div><h4>Legal</h4><ul><li><a href="../legal/privacy.html">Privacy policy</a></li><li><a href="../legal/cookies.html">Cookie policy</a></li><li><a href="../legal/terms.html">Terms of use</a></li><li><a href="../legal/disclaimer.html">Disclaimer</a></li><li><a href="../legal/trademarks.html">Trademark & copyright</a></li><li><a href="../legal/editorial-policy.html">Editorial policy</a></li></ul></div>
+    </div>
+    <div class="legalbar">
+      <p><strong>Trademark and copyright notice.</strong> Code.House is an independent website named after its internet domain. It is not affiliated with, endorsed by, sponsored by or connected to any company, product, service or organisation that uses the name “Codehouse”, “Code House”, “CodeHouse” or any similar mark. All trademarks, service marks, trade names, product names and logos referred to anywhere on this site are the property of their respective owners and are used only for identification and descriptive purposes, which does not imply endorsement. Code samples published here may be used freely. All other original text and design on this site is &copy; <span data-year>2026</span> Code.House. See the <a href="../legal/trademarks.html">trademark and copyright page</a> for details and takedown contacts.</p>
+      <p>This site shows advertising supplied by Google AdSense and third-party vendors, and embeds video hosted on YouTube. Read the <a href="../legal/privacy.html">privacy policy</a>, <a href="../legal/cookies.html">cookie policy</a> and <a href="../legal/disclaimer.html">disclaimer</a>. Information here is educational and general in nature; it is not professional, legal or financial advice.</p>
+      <p>&copy; <span data-year>2026</span> Code.House. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+<div class="cookiebar" id="cookiebar" role="dialog" aria-live="polite" aria-label="Cookie notice">
+  <p>This site uses cookies for advertising and basic preferences. Choose “Essential only” and advertising will be non-personalised. See the <a href="../legal/cookies.html">cookie policy</a>.</p>
+  <div class="btnrow">
+    <button class="btn btn-ghost" id="consentEssential" type="button">Essential only</button>
+    <button class="btn btn-primary" id="consentAll" type="button">Accept all</button>
+  </div>
+</div>
+<script src="../assets/js/site.js" defer></script>
+<script src="../assets/js/tools.js" defer></script>
+</body>
+</html>
