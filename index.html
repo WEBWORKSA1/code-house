@@ -1,701 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Code.House — Learn. Build. Hire.</title>
+<title>Code.House — Free Developer Guides, Tools and Video Courses</title>
+<meta name="description" content="Free plain-English guides to web and software development, browser-based developer tools, a step-by-step learning roadmap and curated video courses.">
+<link rel="canonical" href="https://code.house/">
+
+<meta name="google-adsense-account" content="ca-pub-6620975821265271">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Code.House">
+<meta property="og:title" content="Code.House — Free Developer Guides, Tools and Video Courses">
+<meta property="og:description" content="Free plain-English guides to web and software development, browser-based developer tools, a step-by-step learning roadmap and curated video courses.">
+<meta property="og:url" content="https://code.house/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M20 4 4 17v19h32V17L20 4Z' fill='%230B0F19' stroke='%23818CF8' stroke-width='3'/%3E%3Cpath d='m15 21-4 4 4 4M25 21l4 4-4 4' stroke='%2322D3EE' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#0B0F19;--surface:#111827;--surface2:#1a2233;--border:#243049;--text:#E5E7EB;--muted:#94A3B8;
-  --primary:#6366F1;--primary2:#818CF8;--accent:#22D3EE;--ok:#10B981;--warn:#F59E0B;--danger:#F43F5E;
-  --radius:12px;--shadow:0 10px 40px rgba(0,0,0,.35);
-}
-:root[data-theme="light"]{
-  --bg:#FFFFFF;--surface:#F8FAFC;--surface2:#EEF2F7;--border:#E2E8F0;--text:#0F172A;--muted:#475569;--shadow:0 10px 30px rgba(15,23,42,.08);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
-h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif;line-height:1.15;letter-spacing:-.02em}
-a{color:inherit;text-decoration:none}
-code,.mono{font-family:"JetBrains Mono",monospace}
-.wrap{max-width:1200px;margin:0 auto;padding:0 16px}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:10px;font-weight:600;border:1px solid transparent;cursor:pointer;font-size:15px;transition:.2s;min-height:44px;font-family:inherit}
-.btn-primary{background:var(--primary);color:#fff;box-shadow:0 0 0 0 rgba(99,102,241,.6)}
-.btn-primary:hover{background:var(--primary2);box-shadow:0 0 24px rgba(99,102,241,.55)}
-.btn-ghost{background:transparent;border-color:var(--border);color:var(--text)}
-.btn-ghost:hover{border-color:var(--primary)}
-.btn-accent{background:var(--accent);color:#04202a}
-.pill{display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:600;background:rgba(99,102,241,.15);color:var(--primary2);border:1px solid rgba(99,102,241,.3)}
-.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px;transition:.2s}
-.card:hover{border-color:rgba(99,102,241,.5);transform:translateY(-2px)}
-.grid{display:grid;gap:18px}
-.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
-@media(max-width:900px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.g2,.g3,.g4{grid-template-columns:1fr}}
-section{padding:72px 0}
-.sec-head{text-align:center;max-width:720px;margin:0 auto 40px}
-.sec-head h2{font-size:clamp(28px,4vw,40px);margin:10px 0}
-.sec-head p{color:var(--muted)}
-.muted{color:var(--muted)}
-.blueprint{background-image:linear-gradient(rgba(99,102,241,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(99,102,241,.07) 1px,transparent 1px);background-size:32px 32px}
-
-/* announcement */
-.announce{background:linear-gradient(90deg,var(--primary),#0891b2);color:#fff;font-size:14px;text-align:center;padding:8px 40px;position:relative}
-.announce b{font-weight:700}
-.announce button{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:0;color:#fff;font-size:18px;cursor:pointer}
-
-/* header */
-header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
-.logo{display:flex;align-items:center;gap:10px;font-family:"Space Grotesk";font-weight:700;font-size:20px}
-.logo svg{flex-shrink:0}
-.logo span b{color:var(--accent)}
-.menu{display:flex;gap:4px}
-.menu a{padding:8px 12px;border-radius:8px;color:var(--muted);font-weight:500;font-size:15px;cursor:pointer}
-.menu a:hover,.menu a.active{color:var(--text);background:var(--surface2)}
-.nav-right{display:flex;gap:8px;align-items:center}
-.icon-btn{width:44px;height:44px;border-radius:10px;border:1px solid var(--border);background:transparent;color:var(--text);cursor:pointer;display:grid;place-items:center}
-.search-btn{display:flex;gap:10px;align-items:center;padding:0 12px;height:44px;border:1px solid var(--border);border-radius:10px;color:var(--muted);background:var(--surface);cursor:pointer;font-size:14px;font-family:inherit}
-.search-btn kbd{font-family:"JetBrains Mono";font-size:11px;border:1px solid var(--border);border-radius:5px;padding:1px 5px}
-.burger{display:none}
-@media(max-width:980px){.menu,.search-btn,.nav-right .btn-ghost{display:none}.burger{display:grid}}
-@media(max-width:480px){.nav-right .btn-primary{display:none}}
-.mobile-menu{display:none;position:fixed;inset:68px 0 0 0;background:var(--bg);z-index:49;padding:20px 16px;flex-direction:column;gap:6px}
-.mobile-menu.open{display:flex}
-.mobile-menu a{padding:14px;border-radius:10px;background:var(--surface);font-weight:600;cursor:pointer}
-
-/* hero */
-.hero{padding:80px 0 60px;position:relative;overflow:hidden}
-.hero::after{content:"";position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,.25),transparent 65%);top:-200px;right:-150px;pointer-events:none}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;position:relative;z-index:1}
-@media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
-.hero h1{font-size:clamp(36px,6vw,64px);margin:16px 0}
-.grad{background:linear-gradient(90deg,var(--primary2),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p.lead{font-size:18px;color:var(--muted);max-width:560px}
-.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0}
-.trust{display:flex;gap:28px;flex-wrap:wrap;margin-top:12px}
-.trust div b{display:block;font-family:"Space Grotesk";font-size:26px}
-.trust div span{color:var(--muted);font-size:13px}
-.editor{background:#0d1322;border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow);overflow:hidden}
-.editor-top{display:flex;gap:6px;padding:12px 14px;border-bottom:1px solid #1f2a40;align-items:center}
-.dot{width:11px;height:11px;border-radius:50%}
-.editor-top span.file{margin-left:10px;color:#94A3B8;font-size:12px;font-family:"JetBrains Mono"}
-.editor pre{padding:18px;font-family:"JetBrains Mono";font-size:13.5px;color:#cbd5e1;min-height:230px;white-space:pre-wrap}
-.kw{color:#c084fc}.fn{color:#22D3EE}.str{color:#34d399}.cm{color:#64748b}
-.cursor{display:inline-block;width:8px;height:16px;background:var(--accent);vertical-align:middle;animation:blink 1s steps(1) infinite}
-@keyframes blink{50%{opacity:0}}
-.house-out{padding:0 18px 18px;display:flex;align-items:center;gap:14px}
-.house-out .bar{flex:1;height:8px;border-radius:9px;background:#1f2a40;overflow:hidden}
-.house-out .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--primary),var(--accent));transition:width .4s}
-
-/* splitter */
-.split .card{cursor:pointer}
-.split .ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;margin-bottom:14px;background:rgba(99,102,241,.15);color:var(--primary2)}
-.split h3{font-size:19px;margin-bottom:6px}
-.split p{color:var(--muted);font-size:14.5px}
-.split .go{margin-top:12px;color:var(--accent);font-weight:600;font-size:14px}
-
-/* tools */
-.tool{display:flex;gap:14px;align-items:flex-start}
-.tool .ic{min-width:40px;height:40px;border-radius:10px;background:var(--surface2);display:grid;place-items:center;color:var(--accent)}
-.tool h4{font-size:15.5px}
-.tool p{font-size:13.5px;color:var(--muted)}
-
-/* roadmap */
-.roadmap{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center}
-.node{padding:12px 18px;border-radius:10px;border:2px solid var(--border);background:var(--surface);cursor:pointer;font-weight:600;font-size:14px;transition:.2s}
-.node.done{border-color:var(--ok);background:rgba(16,185,129,.12)}
-.arrow{color:var(--muted)}
-.rm-panel{margin:24px auto 0;max-width:640px}
-
-/* estimator band */
-.band{background:linear-gradient(135deg,rgba(99,102,241,.18),rgba(34,211,238,.1));border:1px solid rgba(99,102,241,.35);border-radius:20px;padding:40px}
-.est-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
-@media(max-width:800px){.est-grid{grid-template-columns:1fr}.band{padding:24px}}
-.q label.qt{display:block;font-weight:600;margin:14px 0 8px;font-size:14px}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{padding:9px 14px;border-radius:999px;border:1px solid var(--border);background:var(--surface);cursor:pointer;font-size:14px;color:var(--text);font-family:inherit;min-height:40px}
-.chip.on{border-color:var(--primary);background:rgba(99,102,241,.2)}
-.result{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;text-align:center}
-.result .num{font-family:"Space Grotesk";font-size:clamp(32px,5vw,46px);font-weight:700}
-.result .tl{color:var(--muted);margin:6px 0 18px}
-input[type=range]{width:100%;accent-color:var(--primary)}
-
-/* posts */
-.post .tag{font-size:12px;color:var(--accent);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
-.post h3{font-size:18px;margin:8px 0}
-.post .meta{font-size:13px;color:var(--muted)}
-.thumb{height:130px;border-radius:10px;margin:-6px -6px 14px;display:grid;place-items:center;font-family:"JetBrains Mono";font-size:28px;font-weight:600;color:#fff}
-
-/* ad slot */
-.ad{border:1px dashed var(--border);border-radius:10px;min-height:100px;display:grid;place-items:center;color:var(--muted);font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin:0 auto;max-width:970px}
-
-/* contest */
-.contest{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}
-@media(max-width:850px){.contest{grid-template-columns:1fr}}
-.countdown{display:flex;gap:10px;margin:18px 0}
-.countdown div{background:var(--surface2);border-radius:10px;padding:10px 12px;text-align:center;min-width:64px}
-.countdown b{font-family:"Space Grotesk";font-size:26px;display:block}
-.countdown span{font-size:11px;color:var(--muted);text-transform:uppercase}
-.prize{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border)}
-.prize:last-child{border:0}
-
-/* video */
-.video-main{aspect-ratio:16/9;border-radius:14px;background:linear-gradient(135deg,#1e1b4b,#0e7490);display:grid;place-items:center;position:relative;cursor:pointer;overflow:hidden}
-.play{width:74px;height:74px;border-radius:50%;background:#ff0033;display:grid;place-items:center;box-shadow:0 0 40px rgba(255,0,51,.5)}
-.video-main .vt{position:absolute;left:18px;bottom:16px;right:18px;color:#fff;font-weight:600}
-
-/* jobs */
-.job{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 0;border-bottom:1px solid var(--border);flex-wrap:wrap}
-.job:last-child{border:0}
-.job .co{width:42px;height:42px;border-radius:10px;display:grid;place-items:center;font-weight:700;color:#fff}
-.job .l{display:flex;gap:14px;align-items:center}
-.job .sal{color:var(--ok);font-weight:600;font-size:14px}
-
-/* support */
-.support-box{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
-@media(max-width:800px){.support-box{grid-template-columns:1fr}}
-.progress{height:14px;border-radius:9px;background:var(--surface2);overflow:hidden;margin:12px 0}
-.progress i{display:block;height:100%;width:68%;background:linear-gradient(90deg,var(--ok),var(--accent))}
-.toggle{display:flex;background:var(--surface2);border-radius:10px;padding:4px;margin-bottom:14px}
-.toggle button{flex:1;padding:10px;border:0;border-radius:8px;background:transparent;color:var(--muted);font-weight:600;cursor:pointer;font-family:inherit}
-.toggle button.on{background:var(--primary);color:#fff}
-.amounts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.amt{padding:14px 6px;border-radius:10px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;font-weight:700;font-size:16px;font-family:inherit}
-.amt.on{border-color:var(--primary);background:rgba(99,102,241,.2)}
-.impact{font-size:13px;color:var(--muted);margin:10px 0 14px;min-height:20px}
-select,input[type=text],input[type=email],textarea{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-family:inherit;font-size:15px}
-textarea{min-height:110px;resize:vertical}
-
-/* faq */
-details{border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin-bottom:10px;background:var(--surface)}
-summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between}
-summary::after{content:"+";color:var(--accent);font-size:20px}
-details[open] summary::after{content:"−"}
-details p{margin-top:10px;color:var(--muted)}
-
-/* newsletter */
-.news{text-align:center;max-width:620px;margin:0 auto}
-.news form{display:flex;gap:10px;margin-top:20px}
-@media(max-width:520px){.news form{flex-direction:column}}
-
-footer{border-top:1px solid var(--border);padding:56px 0 30px;background:var(--surface)}
-.fgrid{display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:28px}
-@media(max-width:850px){.fgrid{grid-template-columns:1fr 1fr}}
-footer h5{font-size:14px;margin-bottom:12px}
-footer ul{list-style:none}
-footer li{margin:7px 0;font-size:14px;color:var(--muted);cursor:pointer}
-footer li:hover{color:var(--text)}
-.legal{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:13px;color:var(--muted)}
-
-/* views */
-.view{display:none}.view.show{display:block}
-
-/* wizard */
-.wizard{max-width:760px;margin:0 auto}
-.wbar{height:6px;background:var(--surface2);border-radius:9px;overflow:hidden;margin:18px 0 32px}
-.wbar i{display:block;height:100%;background:linear-gradient(90deg,var(--primary),var(--accent));transition:width .35s;width:14%}
-.step{display:none;animation:fade .35s}
-.step.show{display:block}
-@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-.step h2{font-size:clamp(24px,3.5vw,34px);margin-bottom:6px}
-.opts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:22px}
-@media(max-width:560px){.opts{grid-template-columns:1fr}}
-.opt{padding:18px;border-radius:12px;border:2px solid var(--border);background:var(--surface);cursor:pointer;text-align:left;color:var(--text);font-family:inherit;font-size:15px;font-weight:600;display:flex;gap:12px;align-items:center}
-.opt small{display:block;font-weight:400;color:var(--muted);font-size:13px}
-.opt.on{border-color:var(--primary);background:rgba(99,102,241,.14)}
-.wnav{display:flex;justify-content:space-between;margin-top:28px;gap:10px}
-.side-trust{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;margin-top:26px;font-size:13px;color:var(--muted)}
-.success{text-align:center;padding:30px 0}
-.check{width:80px;height:80px;border-radius:50%;background:rgba(16,185,129,.15);display:grid;place-items:center;margin:0 auto 18px;color:var(--ok)}
-
-/* json tool */
-.tool-ui{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-@media(max-width:760px){.tool-ui{grid-template-columns:1fr}}
-.tool-ui textarea{min-height:280px;font-family:"JetBrains Mono";font-size:13px}
-.tool-ui pre{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px;min-height:280px;font-size:13px;overflow:auto;white-space:pre-wrap;word-break:break-word}
-.status{font-size:13px;margin-top:8px}
-
-/* palette */
-.palette{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:100;display:none;align-items:flex-start;justify-content:center;padding:90px 16px}
-.palette.open{display:flex}
-.pbox{width:100%;max-width:560px;background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
-.pbox input{border:0;border-bottom:1px solid var(--border);border-radius:0;padding:16px 18px;font-size:16px}
-.pbox ul{list-style:none;max-height:320px;overflow:auto}
-.pbox li{padding:12px 18px;cursor:pointer;display:flex;justify-content:space-between;font-size:15px}
-.pbox li:hover{background:var(--surface2)}
-.pbox li span{color:var(--muted);font-size:12px}
-
-.float-cta{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);z-index:40;display:none;box-shadow:var(--shadow)}
-@media(max-width:700px){.float-cta.vis{display:inline-flex}}
-.toast{position:fixed;bottom:24px;right:24px;background:var(--ok);color:#fff;padding:12px 18px;border-radius:10px;font-weight:600;z-index:120;transform:translateY(100px);opacity:0;transition:.3s}
-.toast.show{transform:none;opacity:1}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-</style>
+<link rel="stylesheet" href="assets/css/site.css">
+<script>window.adsbygoogle=window.adsbygoogle||[];try{if(localStorage.getItem('ch-consent')==='essential'){window.adsbygoogle.requestNonPersonalizedAds=1;}}catch(e){}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6620975821265271" crossorigin="anonymous"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Code.House", "url": "https://code.house/", "description": "Free developer guides, browser-based tools and curated video courses."}</script>
 </head>
 <body>
-
-<div class="announce" id="announce">
-  <b>Live now:</b> September AI Build Challenge, $5,000 prize pool. <a href="#contests" data-go="home" data-scroll="contests" style="text-decoration:underline">Join free</a>
-  <button aria-label="Dismiss" onclick="this.parentElement.remove()">×</button>
-</div>
-
+<a class="skip" href="#main">Skip to content</a>
+<div class="topbar"><a data-partner="1" href="#">Contact, if you are interested in this website / domain name / Sponsorship / Advertisement / Partnership</a></div>
 <header>
   <div class="wrap nav">
-    <a class="logo" data-go="home">
-      <svg width="34" height="34" viewBox="0 0 40 40" fill="none"><path d="M20 4 4 17v19h32V17L20 4Z" stroke="url(#g)" stroke-width="2.5" stroke-linejoin="round"/><path d="m15 21-4 4 4 4M25 21l4 4-4 4M22 19l-4 12" stroke="#22D3EE" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="g" x1="4" y1="4" x2="36" y2="36"><stop stop-color="#818CF8"/><stop offset="1" stop-color="#22D3EE"/></linearGradient></defs></svg>
-      <span>Code<b>.</b>House</span>
-    </a>
-    <nav class="menu">
-      <a data-go="home" data-scroll="learn">Learn</a>
-      <a data-go="tools">Tools</a>
-      <a data-go="home" data-scroll="contests">Contests</a>
-      <a data-go="build">Build</a>
-      <a data-go="home" data-scroll="jobs">Jobs</a>
-      <a data-go="support">Support</a>
-    </nav>
+    <a class="logo" href="index.html"><svg width="30" height="30" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 4 4 17v19h32V17L20 4Z" stroke="#818CF8" stroke-width="2.5" stroke-linejoin="round"/><path d="m15 21-4 4 4 4M25 21l4 4-4 4M22 19l-4 12" stroke="#22D3EE" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Code<b>.</b>House</span></a>
+    <nav class="menu" aria-label="Main"><a href="">Home</a><a href="learn/">Learn</a><a href="tools/">Tools</a><a href="roadmap.html">Roadmap</a><a href="videos.html">Videos</a><a href="build.html">Build</a><a href="sponsorship.html">Sponsorship</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
     <div class="nav-right">
-      <button class="search-btn" onclick="openPalette()"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Search <kbd>⌘K</kbd></button>
-      <button class="icon-btn" id="themeBtn" aria-label="Toggle theme"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg></button>
-      <a class="btn btn-ghost">Sign in</a>
-      <a class="btn btn-primary" data-go="build">Get a Build Quote</a>
-      <button class="icon-btn burger" aria-label="Menu" onclick="document.getElementById('mm').classList.toggle('open')"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      <button class="icon-btn" id="themeBtn" aria-label="Switch between light and dark mode" type="button">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+      </button>
+      <a class="btn btn-primary" href="build.html">Start a project</a>
+      <button class="icon-btn burger" id="burger" aria-label="Open menu" aria-expanded="false" type="button">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
     </div>
   </div>
+  <div class="mobile-menu" id="mobileMenu"><a href="">Home</a><a href="learn/">Learn</a><a href="tools/">Tools</a><a href="roadmap.html">Roadmap</a><a href="videos.html">Videos</a><a href="build.html">Build</a><a href="sponsorship.html">Sponsorship</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="build.html">Start a project</a></div>
 </header>
-<div class="mobile-menu" id="mm">
-  <a data-go="home" data-scroll="learn">Learn</a><a data-go="tools">Tools</a><a data-go="home" data-scroll="contests">Contests</a><a data-go="build">Build a Project</a><a data-go="home" data-scroll="jobs">Jobs</a><a data-go="support">Support Us</a>
-  <a class="btn btn-primary" data-go="build" style="justify-content:center;margin-top:10px;color:#fff;background:var(--primary)">Get a Build Quote</a>
+<main id="main">
+<div class="wrap">
+
+
+<div class="hero">
+ <div class="grid" style="grid-template-columns:1.15fr .85fr;gap:36px;align-items:center">
+  <div>
+  <span class="pill">Free guides · Free tools · No sign-up</span>
+  <h1>Learn to build software, and get help building it</h1>
+  <p class="lead">Code.House publishes plain-English guides to web and software development, free tools that run entirely in your browser, and a learning roadmap that tells you what to study next. If you would rather have something built for you, there is one place to describe it.</p>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="learn/">Start with the guides</a>
+    <a class="btn btn-ghost" href="tools/">Open the free tools</a>
+  </div>
+  </div>
+  <div class="card blueprint" aria-hidden="true" style="padding:0;overflow:hidden">
+    <div style="display:flex;gap:6px;padding:12px 14px;border-bottom:1px solid var(--border);align-items:center">
+      <span style="width:11px;height:11px;border-radius:50%;background:#F43F5E"></span>
+      <span style="width:11px;height:11px;border-radius:50%;background:#F59E0B"></span>
+      <span style="width:11px;height:11px;border-radius:50%;background:#10B981"></span>
+      <span class="mono small muted" style="margin-left:8px">roadmap.ts</span>
+    </div>
+    <pre style="border:0;border-radius:0;margin:0;background:transparent"><code><span style="color:#c084fc">const</span> path = [
+  <span style="color:#34d399">'how the web works'</span>,
+  <span style="color:#34d399">'html'</span>, <span style="color:#34d399">'css'</span>, <span style="color:#34d399">'javascript'</span>,
+  <span style="color:#34d399">'git + deploy'</span>,
+  <span style="color:#34d399">'a framework'</span>,
+  <span style="color:#34d399">'back end + data'</span>,
+  <span style="color:#34d399">'craft'</span>,
+];
+
+<span style="color:#64748b">// 8 steps · ~10 hrs/week · 9–15 months</span>
+<span style="color:#22D3EE">build</span>(path).<span style="color:#22D3EE">then</span>(ship);</code></pre>
+  </div>
+ </div>
+</div>
+<div class="adbox" data-ad="home-top" hidden><div class="adlabel">Advertisement</div><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6620975821265271" data-ad-slot="REPLACE_WITH_SLOT_ID" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+
+<h2>Start where you are</h2>
+<div class="grid g4">
+  <a class="card" href="roadmap.html"><h3>Complete beginner</h3><p class="muted">Follow the roadmap: eight steps from how the web works to professional craft, with time estimates and a test for when you are ready to move on.</p></a>
+  <a class="card" href="learn/"><h3>Learning a specific thing</h3><p class="muted">Ten in-depth guides covering HTML, CSS, JavaScript, Python, Git, APIs, performance, AI assistants, stack choice and deployment.</p></a>
+  <a class="card" href="tools/"><h3>Working right now</h3><p class="muted">Format JSON, test a regular expression, decode Base64, generate identifiers and passwords, check colour contrast.</p></a>
+  <a class="card" href="build.html"><h3>You need it built</h3><p class="muted">Describe the project in a few fields and send it. It is read by a person, and there is no obligation.</p></a>
 </div>
 
-<!-- ================= HOME ================= -->
-<main class="view show" id="v-home">
-  <div class="hero blueprint">
-    <div class="wrap hero-grid">
-      <div>
-        <span class="pill">Free for learners · Vetted teams for builders</span>
-        <h1>Learn to code.<br><span class="grad">Build what matters.</span><br>Hire who delivers.</h1>
-        <p class="lead">Free tutorials, roadmaps and developer tools for millions of coders, plus a matching service that connects your project with 3 vetted software teams in 24 hours.</p>
-        <div class="hero-cta">
-          <a class="btn btn-ghost" data-go="home" data-scroll="learn">Start Learning Free</a>
-          <a class="btn btn-primary" data-go="build">Get Your Project Built →</a>
-        </div>
-        <div class="trust">
-          <div><b>500+</b><span>Free lessons</span></div>
-          <div><b>18</b><span>Dev tools</span></div>
-          <div><b>120+</b><span>Vetted agencies</span></div>
-          <div><b>24h</b><span>Avg. match time</span></div>
-        </div>
-      </div>
-      <div class="editor" aria-hidden="true">
-        <div class="editor-top"><i class="dot" style="background:#f43f5e"></i><i class="dot" style="background:#f59e0b"></i><i class="dot" style="background:#10b981"></i><span class="file">house.ts</span></div>
-        <pre id="typed"></pre>
-        <div class="house-out"><span class="mono muted" style="font-size:12px">build</span><div class="bar"><i id="buildbar"></i></div><span class="mono" id="buildpct" style="font-size:12px;color:var(--accent)">0%</span></div>
-      </div>
-    </div>
-  </div>
+<h2>Guides worth your time</h2>
+<div class="grid g3">
+  <a class="card" href="learn/javascript-fundamentals.html"><span class="pill">Beginner</span><h3>JavaScript fundamentals</h3><p class="muted">Declarations, functions, array methods, promises and async/await — plus the mistakes that trip up most beginners.</p></a>
+  <a class="card" href="learn/choosing-a-tech-stack.html"><span class="pill">Intermediate</span><h3>Choosing a tech stack</h3><p class="muted">A decision framework based on team, timeline, traffic and budget, with sensible defaults for common project shapes.</p></a>
+  <a class="card" href="learn/ai-coding-assistants.html"><span class="pill">Intermediate</span><h3>AI coding assistants</h3><p class="muted">Where they genuinely save time, where they quietly cost it, and a review process that keeps generated code safe to ship.</p></a>
+</div>
+<p style="margin-top:14px"><a href="learn/">See all ten guides →</a></p>
 
-  <section style="padding-top:40px">
-    <div class="wrap">
-      <div class="grid g4 split">
-        <div class="card" data-go="home" data-scroll="learn"><div class="ic"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14Z"/></svg></div><h3>I'm learning to code</h3><p>Roadmaps, lessons and live code editors, all free.</p><div class="go">Start a path →</div></div>
-        <div class="card" data-go="tools"><div class="ic"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m8 9-4 3 4 3M16 9l4 3-4 3M14 5l-4 14"/></svg></div><h3>I'm a developer</h3><p>Tools, challenges, contests with prizes, and job leads.</p><div class="go">Open tools →</div></div>
-        <div class="card" data-go="build" style="border-color:rgba(99,102,241,.5)"><div class="ic" style="background:rgba(34,211,238,.15);color:var(--accent)"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 10 12 3l9 7v11H3z"/><path d="M9 21v-6h6v6"/></svg></div><h3>I need software built</h3><p>Get matched with 3 vetted teams. Free, no obligation.</p><div class="go">Get quotes →</div></div>
-        <div class="card"><div class="ic"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="9" cy="8" r="4"/><path d="M2 21c0-4 3-6 7-6s7 2 7 6M17 11l2 2 4-4"/></svg></div><h3>I'm an agency</h3><p>Receive pre-qualified project leads that match your stack.</p><div class="go">Join the network →</div></div>
-      </div>
-    </div>
-  </section>
+<div class="adbox" data-ad="home-mid" hidden><div class="adlabel">Advertisement</div><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6620975821265271" data-ad-slot="REPLACE_WITH_SLOT_ID" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
 
-  <section id="learn" style="padding-top:20px">
-    <div class="wrap">
-      <div class="sec-head"><span class="pill">Interactive Roadmap</span><h2>Frontend Developer Path</h2><p>Click a step to see what to learn next and mark your progress.</p></div>
-      <div class="roadmap" id="roadmap"></div>
-      <div class="card rm-panel" id="rmPanel"><h3 id="rmT">HTML</h3><p class="muted" id="rmD" style="margin:6px 0 12px"></p><button class="btn btn-ghost" id="rmDone">Mark as done</button></div>
-    </div>
-  </section>
+<h2>Free tools, nothing uploaded</h2>
+<p class="muted" style="max-width:720px">Every tool here runs as JavaScript inside your own browser. What you paste never leaves the tab — no account, no upload, no three-free-uses paywall.</p>
+<div class="grid g3">
+  <a class="card" href="tools/json-formatter.html"><h3>JSON formatter</h3><p class="muted">Format, validate and minify, with a readable error when parsing fails.</p></a>
+  <a class="card" href="tools/regex-tester.html"><h3>Regex tester</h3><p class="muted">Live match highlighting and a capture-group table as you type.</p></a>
+  <a class="card" href="tools/project-cost-estimator.html"><h3>Project cost estimator</h3><p class="muted">An indicative budget and schedule range, with the reasoning shown.</p></a>
+</div>
 
-  <section style="padding-top:10px">
-    <div class="wrap">
-      <div class="sec-head"><span class="pill">Free Developer Tools</span><h2>Tools you'll bookmark</h2><p>Fast, no sign-up, runs in your browser.</p></div>
-      <div class="grid g4" id="toolsGrid"></div>
-    </div>
-  </section>
+<h2>Video courses</h2>
+<p class="muted" style="max-width:720px">A curated index of long-form free courses, organised by topic, so you can pair watching with the written guides. Videos load only when you press play.</p>
+<p><a class="btn btn-ghost" href="videos.html">Browse the video library</a></p>
 
-  <section>
-    <div class="wrap">
-      <div class="band">
-        <div class="est-grid">
-          <div class="q">
-            <span class="pill">Cost Estimator</span>
-            <h2 style="font-size:clamp(26px,3.6vw,36px);margin:12px 0 4px">What will your project cost?</h2>
-            <p class="muted">Answer 3 questions for an instant 2026 price range.</p>
-            <label class="qt">1. What are you building?</label>
-            <div class="chips" data-q="type"><button class="chip on" data-v="30">Web app</button><button class="chip" data-v="45">Mobile app</button><button class="chip" data-v="12">Website</button><button class="chip" data-v="55">AI product</button><button class="chip" data-v="60">SaaS</button></div>
-            <label class="qt">2. Platforms</label>
-            <div class="chips" data-q="plat"><button class="chip on" data-v="1">One</button><button class="chip" data-v="1.5">Two</button><button class="chip" data-v="1.9">Web + iOS + Android</button></div>
-            <label class="qt">3. Complexity: <span id="cxL" style="color:var(--accent)">Standard</span></label>
-            <input type="range" min="1" max="3" value="2" id="cx">
-          </div>
-          <div class="result">
-            <div class="muted" style="font-size:14px">Estimated budget</div>
-            <div class="num" id="estNum">$27k – $45k</div>
-            <div class="tl" id="estTl">About 10–16 weeks with a 3–4 person team</div>
-            <a class="btn btn-primary" data-go="build" style="width:100%;justify-content:center">Get exact quotes from 3 vetted teams</a>
-            <div class="muted" style="font-size:12px;margin-top:10px">Free · No obligation · Reply within 24h</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<div class="band" style="margin-top:40px">
+  <h2 style="margin-top:0">Need software built?</h2>
+  <p>Describe what you want in plain language — the type of product, roughly what it should do, your budget range and when you need it. It goes to a person, not a queue, and sending it commits you to nothing.</p>
+  <p>Not sure what it should cost first? Run the <a href="tools/project-cost-estimator.html">cost estimator</a>.</p>
+  <div class="cta-row"><a class="btn btn-primary" href="build.html">Describe your project</a><a class="btn btn-ghost" href="sponsorship.html">Sponsorship and advertising</a></div>
+</div>
+<div class="adbox" data-ad="home-end" hidden><div class="adlabel">Advertisement</div><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6620975821265271" data-ad-slot="REPLACE_WITH_SLOT_ID" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
 
-  <section style="padding-top:10px">
-    <div class="wrap">
-      <div class="sec-head"><span class="pill">Latest Guides</span><h2>Learn something useful today</h2></div>
-      <div class="grid g3" id="posts"></div>
-    </div>
-  </section>
-
-  <div class="wrap"><div class="ad">Advertisement</div></div>
-
-  <section id="contests">
-    <div class="wrap contest">
-      <div class="card" style="padding:32px">
-        <span class="pill" style="background:rgba(244,63,94,.15);color:#fb7185;border-color:rgba(244,63,94,.35)">● LIVE CONTEST</span>
-        <h2 style="font-size:clamp(26px,3.6vw,38px);margin:14px 0 8px">September AI Build Challenge</h2>
-        <p class="muted">Build an AI tool that solves a real small-business problem. Solo or teams of up to 4. Judged on usefulness, execution and design.</p>
-        <div class="countdown" id="cd"></div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-primary" onclick="toast('You are registered. Check your email for the brief.')">Register Free</button><button class="btn btn-ghost">View Rules</button></div>
-        <p class="muted" style="font-size:13px;margin-top:16px">1,284 participants · 212 submissions · Sponsored prize tracks available</p>
-      </div>
-      <div class="card" style="padding:28px">
-        <h3 style="margin-bottom:10px">Prize Pool: $5,000</h3>
-        <div class="prize"><span>🥇 1st Place</span><b>$2,500</b></div>
-        <div class="prize"><span>🥈 2nd Place</span><b>$1,200</b></div>
-        <div class="prize"><span>🥉 3rd Place</span><b>$600</b></div>
-        <div class="prize"><span>Best Student Build</span><b>$400</b></div>
-        <div class="prize"><span>Community Choice</span><b>$300</b></div>
-        <a class="btn btn-ghost" style="width:100%;justify-content:center;margin-top:16px">Sponsor a Prize Track</a>
-      </div>
-    </div>
-  </section>
-
-  <section style="padding-top:10px">
-    <div class="wrap">
-      <div class="sec-head"><span class="pill">Code.House on YouTube</span><h2>Full courses, free forever</h2></div>
-      <div class="grid" style="grid-template-columns:1.5fr 1fr;gap:20px" id="vidwrap">
-        <div class="video-main" onclick="toast('The video would play here (YouTube loads only after you click).')">
-          <div class="play"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>
-          <div class="vt">Build a Full-Stack SaaS with Next.js and Supabase: 4-Hour Course</div>
-        </div>
-        <div class="grid" style="gap:12px">
-          <div class="card" style="padding:16px"><b>Python for Beginners</b><div class="muted" style="font-size:13px">32 videos · 11 hrs</div></div>
-          <div class="card" style="padding:16px"><b>Build AI Apps with LLMs</b><div class="muted" style="font-size:13px">18 videos · 7 hrs</div></div>
-          <div class="card" style="padding:16px"><b>60-Second Dev Tips</b><div class="muted" style="font-size:13px">140 shorts</div></div>
-          <a class="btn" style="background:#ff0033;color:#fff;justify-content:center">Subscribe on YouTube</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="jobs" style="padding-top:10px">
-    <div class="wrap">
-      <div style="display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:12px;margin-bottom:18px">
-        <div><span class="pill">Jobs Board</span><h2 style="font-size:clamp(26px,3.6vw,36px);margin-top:10px">Developer jobs with salaries shown</h2></div>
-        <a class="btn btn-ghost">Post a Job, $199</a>
-      </div>
-      <div class="card" id="jobList" style="padding:6px 22px"></div>
-    </div>
-  </section>
-
-  <section style="padding-top:10px">
-    <div class="wrap">
-      <div class="band support-box" style="background:linear-gradient(135deg,rgba(16,185,129,.14),rgba(99,102,241,.12));border-color:rgba(16,185,129,.35)">
-        <div>
-          <span class="pill" style="background:rgba(16,185,129,.15);color:#34d399;border-color:rgba(16,185,129,.35)">Community Supported</span>
-          <h2 style="font-size:clamp(26px,3.6vw,36px);margin:12px 0 8px">Keep Code.House free for every learner</h2>
-          <p class="muted">Donations pay for servers, contest prizes, outreach and new hires. Every dollar is listed on our public transparency page.</p>
-          <div class="progress"><i></i></div>
-          <p style="font-size:14px"><b>$6,840</b> <span class="muted">of $10,000 September goal · 412 supporters</span></p>
-        </div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn btn-primary" data-go="support" style="background:var(--ok)">Donate Monthly</a>
-          <a class="btn btn-ghost" data-go="support">One-time Gift</a>
-          <a class="btn btn-ghost">Become a Sponsor</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section style="padding-top:10px">
-    <div class="wrap" style="max-width:820px">
-      <div class="sec-head"><h2>Frequently asked questions</h2></div>
-      <details><summary>Is Code.House really free?</summary><p>Yes. Lessons, roadmaps, tools and contests are free. Ads, sponsors, supporters and our project-matching service pay for it.</p></details>
-      <details><summary>How does project matching work?</summary><p>Describe your project in about 90 seconds. We review it and introduce you to up to 3 vetted teams that fit your budget, stack and timeline. You compare proposals and choose. It's free for you.</p></details>
-      <details><summary>How are agencies vetted?</summary><p>We check portfolios, client references, company registration and delivery history. Agencies that get poor client feedback are removed.</p></details>
-      <details><summary>Can my company sponsor a contest?</summary><p>Yes. Sponsors can name a prize track, get their logo on the site and in the newsletter, and reach participants who opt in to hear from them.</p></details>
-    </div>
-  </section>
-
-  <section style="padding-top:0">
-    <div class="wrap">
-      <div class="card news" style="padding:40px 24px">
-        <h2 style="font-size:30px">The House Weekly</h2>
-        <p class="muted">A 5-minute dev digest: new tools, tutorials, jobs and contests. Every Tuesday.</p>
-        <form onsubmit="event.preventDefault();toast('Subscribed. Welcome to the House.');this.reset()">
-          <input type="email" required placeholder="you@email.com" aria-label="Email">
-          <button class="btn btn-primary">Subscribe</button>
-        </form>
-      </div>
-    </div>
-  </section>
+</div>
 </main>
-
-<!-- ================= BUILD WIZARD ================= -->
-<main class="view" id="v-build">
-  <section class="blueprint" style="min-height:80vh">
-    <div class="wrap wizard">
-      <div style="text-align:center"><span class="pill">Free project matching</span></div>
-      <div class="wbar"><i id="wbar"></i></div>
-      <div class="muted mono" style="font-size:12px;text-align:center;margin-top:-20px;margin-bottom:20px" id="wstep">Step 1 of 7</div>
-
-      <div class="step show" data-s="1"><h2>What are you building?</h2><p class="muted">Pick the closest match. You can change it later.</p>
-        <div class="opts" data-single>
-          <button class="opt">🌐<span>Web app<small>Dashboards, portals, platforms</small></span></button>
-          <button class="opt">📱<span>Mobile app<small>iOS, Android, cross-platform</small></span></button>
-          <button class="opt">🤖<span>AI / Chatbot<small>LLM apps, automation, agents</small></span></button>
-          <button class="opt">☁️<span>SaaS product<small>Subscriptions, multi-tenant</small></span></button>
-          <button class="opt">🛒<span>E-commerce<small>Stores, marketplaces</small></span></button>
-          <button class="opt">🤔<span>Not sure yet<small>We'll help you scope it</small></span></button>
-        </div></div>
-
-      <div class="step" data-s="2"><h2>Where is the project today?</h2>
-        <div class="opts" data-single>
-          <button class="opt">💡<span>Just an idea</span></button><button class="opt">🎨<span>Have designs</span></button>
-          <button class="opt">🚀<span>Need an MVP</span></button><button class="opt">🔧<span>Rebuild / improve existing</span></button>
-        </div></div>
-
-      <div class="step" data-s="3"><h2>Which features do you need?</h2><p class="muted">Select all that apply.</p>
-        <div class="chips" style="margin-top:22px">
-          <button class="chip">User accounts</button><button class="chip">Payments</button><button class="chip">Admin panel</button><button class="chip">AI features</button><button class="chip">Chat / messaging</button><button class="chip">Maps / location</button><button class="chip">Booking</button><button class="chip">Integrations / API</button><button class="chip">Analytics</button><button class="chip">Notifications</button>
-        </div></div>
-
-      <div class="step" data-s="4"><h2>What's your budget?</h2><p class="muted">Helps us match teams that fit. Most MVPs cost $15k–$50k.</p>
-        <div class="opts" data-single>
-          <button class="opt"><span>$5k – $10k</span></button><button class="opt"><span>$10k – $25k</span></button>
-          <button class="opt"><span>$25k – $50k</span></button><button class="opt"><span>$50k – $100k</span></button>
-          <button class="opt"><span>$100k+</span></button><button class="opt"><span>Not sure, advise me</span></button>
-        </div></div>
-
-      <div class="step" data-s="5"><h2>When do you want to start?</h2>
-        <div class="opts" data-single>
-          <button class="opt">⚡<span>ASAP</span></button><button class="opt">📅<span>Within 1–3 months</span></button>
-          <button class="opt">🗓️<span>3–6 months</span></button><button class="opt">🌿<span>Flexible</span></button>
-        </div></div>
-
-      <div class="step" data-s="6"><h2>Describe your project</h2><p class="muted">A few sentences is enough. Or let AI draft a brief from one line.</p>
-        <textarea id="desc" style="margin-top:18px" placeholder="e.g. A booking app for yoga studios with class schedules, payments and reminders..."></textarea>
-        <button class="btn btn-ghost" style="margin-top:10px" onclick="aiBrief()">✨ Help me write this</button></div>
-
-      <div class="step" data-s="7"><h2>Where should we send your matches?</h2>
-        <div class="grid g2" style="margin-top:20px;gap:12px">
-          <input type="text" placeholder="Full name" id="fname"><input type="email" placeholder="Work email" id="femail">
-          <input type="text" placeholder="Company (optional)"><input type="text" placeholder="Phone (optional)">
-        </div>
-        <label style="display:flex;gap:10px;margin-top:14px;font-size:13px;color:var(--muted);align-items:flex-start"><input type="checkbox" checked style="margin-top:3px"> I agree to share my brief with up to 3 matched teams and to receive emails about my project.</label></div>
-
-      <div class="step" data-s="8"><div class="success"><div class="check"><svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg></div>
-        <h2>Your brief is in.</h2><p class="muted" style="max-width:520px;margin:10px auto 24px">We're reviewing it now. Expect introductions to up to 3 vetted teams within 24 hours. Want to move faster? Book a free 15-minute scoping call.</p>
-        <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap"><button class="btn btn-primary">Book Free Call</button><a class="btn btn-ghost" data-go="home">Back to Home</a></div></div></div>
-
-      <div class="wnav" id="wnav"><button class="btn btn-ghost" id="wback">← Back</button><button class="btn btn-primary" id="wnext">Continue →</button></div>
-      <div class="side-trust"><span>🔒 Your data is never sold</span><span>✓ 120+ vetted teams</span><span>⏱ Matches in 24h</span><span>$0 Free for clients</span></div>
-    </div>
-  </section>
-</main>
-
-<!-- ================= TOOLS ================= -->
-<main class="view" id="v-tools">
-  <section>
-    <div class="wrap">
-      <div class="muted" style="font-size:13px;margin-bottom:10px">Home / Tools / JSON Formatter</div>
-      <h1 style="font-size:clamp(30px,5vw,46px)">JSON Formatter &amp; Validator</h1>
-      <p class="muted" style="margin:8px 0 24px">Paste JSON to format, validate or minify. It runs in your browser, so nothing is uploaded.</p>
-      <div class="tool-ui">
-        <div><textarea id="jin" spellcheck="false">{"site":"code.house","tools":18,"free":true,"stack":["Next.js","Supabase","Stripe"],"contest":{"name":"AI Build Challenge","prize":5000}}</textarea>
-          <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap"><button class="btn btn-primary" onclick="fmt(2)">Format</button><button class="btn btn-ghost" onclick="fmt(0)">Minify</button><button class="btn btn-ghost" onclick="copyOut()">Copy</button></div></div>
-        <div><pre id="jout"></pre><div class="status" id="jst"></div></div>
-      </div>
-      <div class="ad" style="margin-top:36px">Advertisement</div>
-      <div class="band" style="margin-top:36px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:26px">
-        <div><h3 style="font-size:22px">Building an API-heavy product?</h3><p class="muted">Get matched with teams that ship reliable APIs.</p></div>
-        <a class="btn btn-primary" data-go="build">Get Free Quotes</a>
-      </div>
-      <h2 style="margin:48px 0 16px;font-size:26px">More free tools</h2>
-      <div class="grid g4" id="toolsGrid2"></div>
-    </div>
-  </section>
-</main>
-
-<!-- ================= SUPPORT ================= -->
-<main class="view" id="v-support">
-  <section class="blueprint">
-    <div class="wrap support-box">
-      <div>
-        <span class="pill" style="background:rgba(16,185,129,.15);color:#34d399;border-color:rgba(16,185,129,.35)">Support Code.House</span>
-        <h1 style="font-size:clamp(32px,5vw,52px);margin:14px 0">Free coding education, <span class="grad">powered by people like you.</span></h1>
-        <p class="muted">Your support pays for the online compilers, monthly contest prizes, outreach to new learners and the people who build all of it.</p>
-        <div class="progress" style="margin-top:22px"><i></i></div>
-        <p style="font-size:14px"><b>$6,840</b> <span class="muted">raised of $10,000 this month</span></p>
-        <div class="grid g3" style="margin-top:22px;gap:10px">
-          <div class="card" style="padding:14px"><b style="font-size:22px;font-family:'Space Grotesk'">42%</b><div class="muted" style="font-size:12px">Servers &amp; ops</div></div>
-          <div class="card" style="padding:14px"><b style="font-size:22px;font-family:'Space Grotesk'">28%</b><div class="muted" style="font-size:12px">Contest prizes</div></div>
-          <div class="card" style="padding:14px"><b style="font-size:22px;font-family:'Space Grotesk'">30%</b><div class="muted" style="font-size:12px">Hiring &amp; outreach</div></div>
-        </div>
-      </div>
-      <div class="card" style="padding:28px">
-        <div class="toggle"><button class="on" data-f="m">Monthly</button><button data-f="o">One-time</button></div>
-        <div class="amounts" id="amts"></div>
-        <div class="impact" id="impact"></div>
-        <label class="muted" style="font-size:13px">Where should it go?</label>
-        <select style="margin:6px 0 14px"><option>Where it's needed most</option><option>Contest prizes</option><option>Marketing &amp; outreach</option><option>Hiring talent</option><option>Learner scholarships</option></select>
-        <label style="display:flex;gap:8px;font-size:13px;color:var(--muted);margin-bottom:14px"><input type="checkbox" checked> Add 3% to cover processing fees</label>
-        <button class="btn btn-primary" style="width:100%;justify-content:center;background:var(--ok)" id="donateBtn" onclick="toast('Opening secure checkout…')">Donate $25 monthly</button>
-        <div style="display:flex;gap:8px;margin-top:10px"><button class="btn btn-ghost" style="flex:1;justify-content:center">PayPal</button><button class="btn btn-ghost" style="flex:1;justify-content:center">UPI</button><button class="btn btn-ghost" style="flex:1;justify-content:center">☕ Coffee</button></div>
-        <p class="muted" style="font-size:12px;margin-top:12px;text-align:center">Secure payment via Stripe · Cancel anytime</p>
-      </div>
-    </div>
-  </section>
-</main>
-
 <footer>
   <div class="wrap">
     <div class="fgrid">
-      <div><a class="logo" data-go="home"><span>Code<b style="color:var(--accent)">.</b>House</span></a><p class="muted" style="font-size:14px;margin:10px 0 14px;max-width:280px">The house where software gets built. Learn free, build faster, hire vetted teams.</p><a class="btn btn-ghost" data-go="support" style="font-size:14px">☕ Keep it free</a></div>
-      <div><h5>Learn</h5><ul><li>Tutorials</li><li>Roadmaps</li><li>Cheat Sheets</li><li>Glossary</li><li>Interview Prep</li></ul></div>
-      <div><h5>Tools</h5><ul><li data-go="tools">JSON Formatter</li><li>Online Compiler</li><li>Regex Tester</li><li>AI Code Explainer</li><li>Cost Calculator</li></ul></div>
-      <div><h5>Build</h5><ul><li data-go="build">Get a Quote</li><li>Hire Developers</li><li>Agencies</li><li>Join as Agency</li><li>Case Studies</li></ul></div>
-      <div><h5>Company</h5><ul><li>About</li><li>Contests</li><li>Jobs</li><li>Advertise</li><li>Transparency</li></ul></div>
+      <div>
+        <a class="logo" href="index.html"><svg width="30" height="30" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 4 4 17v19h32V17L20 4Z" stroke="#818CF8" stroke-width="2.5" stroke-linejoin="round"/><path d="m15 21-4 4 4 4M25 21l4 4-4 4M22 19l-4 12" stroke="#22D3EE" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Code<b>.</b>House</span></a>
+        <p class="muted" style="margin-top:10px;max-width:300px">Free, plain-English guides, working developer tools and video courses — plus a single place to ask about building software.</p>
+        <p style="margin-top:12px"><a data-partner="1" href="#" class="btn btn-ghost">Sponsorship, advertising, partnership or domain enquiries</a></p>
+      </div>
+      <div><h4>Learn</h4><ul><li><a href="learn/">All guides</a></li><li><a href="learn/html-basics.html">HTML basics</a></li><li><a href="learn/javascript-fundamentals.html">JavaScript</a></li><li><a href="learn/python-basics.html">Python</a></li><li><a href="glossary.html">Glossary</a></li></ul></div><div><h4>Tools</h4><ul><li><a href="tools/">All tools</a></li><li><a href="tools/json-formatter.html">JSON formatter</a></li><li><a href="tools/regex-tester.html">Regex tester</a></li><li><a href="tools/uuid-generator.html">UUID & password</a></li><li><a href="tools/project-cost-estimator.html">Cost estimator</a></li></ul></div><div><h4>Site</h4><ul><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="build.html">Project enquiries</a></li><li><a href="sponsorship.html">Sponsorship & advertising</a></li><li><a href="faq.html">FAQ</a></li></ul></div><div><h4>Legal</h4><ul><li><a href="legal/privacy.html">Privacy policy</a></li><li><a href="legal/cookies.html">Cookie policy</a></li><li><a href="legal/terms.html">Terms of use</a></li><li><a href="legal/disclaimer.html">Disclaimer</a></li><li><a href="legal/trademarks.html">Trademark & copyright</a></li><li><a href="legal/editorial-policy.html">Editorial policy</a></li></ul></div>
     </div>
-    <div class="legal"><span>© 2026 Code.House · Preview build</span><span>Privacy · Terms · Cookies · Affiliate Disclosure · Editorial Policy</span></div>
+    <div class="legalbar">
+      <p><strong>Trademark and copyright notice.</strong> Code.House is an independent website named after its internet domain. It is not affiliated with, endorsed by, sponsored by or connected to any company, product, service or organisation that uses the name “Codehouse”, “Code House”, “CodeHouse” or any similar mark. All trademarks, service marks, trade names, product names and logos referred to anywhere on this site are the property of their respective owners and are used only for identification and descriptive purposes, which does not imply endorsement. Code samples published here may be used freely. All other original text and design on this site is &copy; <span data-year>2026</span> Code.House. See the <a href="legal/trademarks.html">trademark and copyright page</a> for details and takedown contacts.</p>
+      <p>This site shows advertising supplied by Google AdSense and third-party vendors, and embeds video hosted on YouTube. Read the <a href="legal/privacy.html">privacy policy</a>, <a href="legal/cookies.html">cookie policy</a> and <a href="legal/disclaimer.html">disclaimer</a>. Information here is educational and general in nature; it is not professional, legal or financial advice.</p>
+      <p>&copy; <span data-year>2026</span> Code.House. All rights reserved.</p>
+    </div>
   </div>
 </footer>
-
-<a class="btn btn-primary float-cta" id="floatCta" data-go="build">Start a Project →</a>
-
-<div class="palette" id="palette" onclick="if(event.target===this)closePalette()">
-  <div class="pbox"><input id="pin" placeholder="Search tutorials, tools, pages…" aria-label="Search"><ul id="plist"></ul></div>
+<div class="cookiebar" id="cookiebar" role="dialog" aria-live="polite" aria-label="Cookie notice">
+  <p>This site uses cookies for advertising and basic preferences. Choose “Essential only” and advertising will be non-personalised. See the <a href="legal/cookies.html">cookie policy</a>.</p>
+  <div class="btnrow">
+    <button class="btn btn-ghost" id="consentEssential" type="button">Essential only</button>
+    <button class="btn btn-primary" id="consentAll" type="button">Accept all</button>
+  </div>
 </div>
-<div class="toast" id="toast"></div>
+<script src="assets/js/site.js" defer></script>
 
-<script>
-const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
-function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2600)}
-
-/* routing */
-function go(view,scroll){
-  $$('.view').forEach(v=>v.classList.remove('show'));$('#v-'+view).classList.add('show');
-  $('#mm').classList.remove('open');
-  $$('.menu a').forEach(a=>a.classList.toggle('active',a.dataset.go===view&&!a.dataset.scroll&&view!=='home'));
-  if(scroll){setTimeout(()=>document.getElementById(scroll)?.scrollIntoView({behavior:'smooth'}),30)}else window.scrollTo({top:0});
-}
-document.addEventListener('click',e=>{const el=e.target.closest('[data-go]');if(el){e.preventDefault();go(el.dataset.go,el.dataset.scroll)}});
-
-/* theme */
-$('#themeBtn').onclick=()=>{const r=document.documentElement;r.dataset.theme=r.dataset.theme==='light'?'dark':'light'};
-
-/* typing editor */
-const code=[['kw','const '],['','house = '],['kw','await '],['fn','build'],['','({\n  learn: '],['str','"free"'],[',',',\n  tools: '],['fn','18'],['',',\n  teams: '],['str','"vetted"'],['',',\n  ship: '],['kw','true'],['','\n});\n'],['cm','// ✓ Code.House is live']];
-let ci=0,cc=0,out='';const typed=$('#typed');
-function typeTick(){
-  if(ci>=code.length){typed.innerHTML=out;$('#buildbar').style.width='100%';$('#buildpct').textContent='100%';setTimeout(()=>{ci=0;cc=0;out='';$('#buildbar').style.width='0';typeTick()},3200);return}
-  const [cls,txt]=code[ci];
-  if(cc===0)out+=cls&&cls!==','?`<span class="${cls}">`:'';
-  out+=txt[cc].replace('<','&lt;');cc++;
-  if(cc>=txt.length){if(cls&&cls!==',')out+='</span>';ci++;cc=0}
-  typed.innerHTML=out+'<span class="cursor"></span>';
-  const p=Math.round(ci/code.length*100);$('#buildbar').style.width=p+'%';$('#buildpct').textContent=p+'%';
-  setTimeout(typeTick,matchMedia('(prefers-reduced-motion:reduce)').matches?0:38);
-}
-typeTick();
-
-/* roadmap */
-const rm=[['HTML','Structure pages with semantic elements, forms and accessibility basics. Around 2 weeks.'],['CSS','Layouts with Flexbox and Grid, responsive design, animations. Around 3 weeks.'],['JavaScript','Variables, functions, DOM, async/await, fetch. The core skill. Around 6 weeks.'],['Git','Version control, branches, pull requests, GitHub workflow. Around 1 week.'],['React','Components, hooks, state and routing. Around 5 weeks.'],['Next.js','Server components, routing, data fetching, deployment. Around 3 weeks.'],['Get Hired','Portfolio, contests, interview prep and the Code.House jobs board.']];
-const done=new Set();let cur=0;
-function drawRm(){$('#roadmap').innerHTML=rm.map((n,i)=>`<div class="node ${done.has(i)?'done':''}" data-i="${i}" style="${i===cur?'border-color:var(--primary)':''}">${done.has(i)?'✓ ':''}${n[0]}</div>${i<rm.length-1?'<span class="arrow">→</span>':''}`).join('');
-  $('#rmT').textContent=rm[cur][0];$('#rmD').textContent=rm[cur][1];$('#rmDone').textContent=done.has(cur)?'Completed ✓':'Mark as done'}
-$('#roadmap').onclick=e=>{const n=e.target.closest('.node');if(n){cur=+n.dataset.i;drawRm()}};
-$('#rmDone').onclick=()=>{done.has(cur)?done.delete(cur):done.add(cur);if(done.has(cur)&&cur<rm.length-1)cur++;drawRm()};
-drawRm();
-
-/* tools */
-const tools=[['{ }','JSON Formatter','Format, validate, minify'],['▶','Online Compiler','Python, JS, Java, C++, Go'],['.*','Regex Tester','Live match highlighting'],['✨','AI Code Explainer','Understand any snippet'],['$','App Cost Calculator','Budget in 60 seconds'],['⏱','Cron Builder','Human-readable schedules'],['JWT','JWT Decoder','Inspect tokens safely'],['🎨','Gradient Maker','Copy CSS & Tailwind']];
-const tHtml=tools.map(t=>`<div class="card tool" data-go="${t[1]==='App Cost Calculator'?'build':'tools'}" style="cursor:pointer"><div class="ic mono" style="font-size:13px;font-weight:700">${t[0]}</div><div><h4>${t[1]}</h4><p>${t[2]}</p></div></div>`).join('');
-$('#toolsGrid').innerHTML=tHtml;$('#toolsGrid2').innerHTML=tHtml;
-
-/* estimator */
-const est={type:30,plat:1};
-$$('.chips[data-q]').forEach(g=>g.onclick=e=>{const c=e.target.closest('.chip');if(!c)return;g.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));c.classList.add('on');est[g.dataset.q]=+c.dataset.v;calc()});
-$('#cx').oninput=calc;
-function calc(){const cx=+$('#cx').value,m=[.55,1,1.9][cx-1];$('#cxL').textContent=['Simple','Standard','Complex'][cx-1];
-  const base=est.type*est.plat*m,lo=Math.round(base*.9),hi=Math.round(base*1.5);
-  $('#estNum').textContent=`$${lo}k – $${hi}k`;const w=Math.round(lo/2.6),w2=Math.round(hi/2.6);
-  $('#estTl').textContent=`About ${Math.max(3,w)}–${Math.max(5,w2)} weeks with a ${cx===3?'5–7':cx===2?'3–4':'2–3'} person team`}
-calc();
-
-/* posts */
-const posts=[['#6366F1','JS','JavaScript','Async/Await explained with 12 real examples','14 min read · Beginner'],['#0891b2','AI','AI Engineering','Build your first LLM app in one afternoon','22 min read · Intermediate'],['#059669','vs','Comparison','Supabase vs Firebase in 2026: which should you pick?','11 min read · Guide']];
-$('#posts').innerHTML=posts.map(p=>`<article class="card post" style="cursor:pointer"><div class="thumb" style="background:linear-gradient(135deg,${p[0]},#0B0F19)">${p[1]}</div><div class="tag">${p[2]}</div><h3>${p[3]}</h3><div class="meta">${p[4]}</div></article>`).join('');
-
-/* jobs */
-const jobs=[['#6366F1','N','Senior React Engineer','Northwind Labs · Remote (US/EU)','$140k–$180k'],['#0891b2','A','AI/ML Engineer','Atlas Health · Toronto, Hybrid','$130k–$165k CAD'],['#f59e0b','K','Full-Stack Developer (Next.js)','Kitefin · Remote','$95k–$125k'],['#10b981','P','Python Backend Developer','Pinecrest Data · Bengaluru','₹28L–₹40L']];
-$('#jobList').innerHTML=jobs.map(j=>`<div class="job"><div class="l"><div class="co" style="background:${j[0]}">${j[1]}</div><div><b>${j[2]}</b><div class="muted" style="font-size:13px">${j[3]}</div></div></div><div style="display:flex;gap:14px;align-items:center"><span class="sal">${j[4]}</span><button class="btn btn-ghost" style="padding:8px 14px;min-height:38px">Apply</button></div></div>`).join('');
-
-/* countdown */
-const end=Date.now()+ (13*86400+7*3600+42*60)*1000;
-function cd(){let s=Math.max(0,Math.floor((end-Date.now())/1000));const d=Math.floor(s/86400);s%=86400;const h=Math.floor(s/3600);s%=3600;const m=Math.floor(s/60);s%=60;
-  $('#cd').innerHTML=[[d,'Days'],[h,'Hrs'],[m,'Min'],[s,'Sec']].map(x=>`<div><b>${String(x[0]).padStart(2,'0')}</b><span>${x[1]}</span></div>`).join('')}
-cd();setInterval(cd,1000);
-
-/* wizard */
-let ws=1;const W=8;
-function drawW(){$$('.step').forEach(s=>s.classList.toggle('show',+s.dataset.s===ws));
-  $('#wbar').style.width=Math.min(100,ws/7*100)+'%';$('#wstep').textContent=ws<8?`Step ${ws} of 7`:'Done';
-  $('#wback').style.visibility=ws>1&&ws<8?'visible':'hidden';$('#wnav').style.display=ws===8?'none':'flex';
-  $('#wnext').textContent=ws===7?'Get My Matches →':'Continue →'}
-$$('.opts[data-single]').forEach(g=>g.onclick=e=>{const o=e.target.closest('.opt');if(!o)return;g.querySelectorAll('.opt').forEach(x=>x.classList.remove('on'));o.classList.add('on');setTimeout(()=>{if(ws<7){ws++;drawW()}},260)});
-$$('.step[data-s="3"] .chip').forEach(c=>c.onclick=()=>c.classList.toggle('on'));
-$('#wnext').onclick=()=>{if(ws===7){if(!$('#fname').value||!/\S+@\S+\.\S+/.test($('#femail').value)){toast('Please add your name and a valid email.');return}}ws=Math.min(W,ws+1);drawW()};
-$('#wback').onclick=()=>{ws=Math.max(1,ws-1);drawW()};
-function aiBrief(){const d=$('#desc');const seed=d.value||'booking app for yoga studios';
-  d.value=`Project: ${seed.replace(/\.$/,'')}\n\nGoal: Launch an MVP in 10–12 weeks.\nUsers: Customers and business admins.\nCore features: accounts, search and booking, payments (Stripe), email/SMS reminders, admin dashboard with reports.\nPlatforms: Responsive web first, then iOS/Android.\nSuccess metric: 500 active users within 90 days of launch.`;toast('Brief drafted. Edit anything.')}
-drawW();
-
-/* json tool */
-function fmt(n){const i=$('#jin').value;try{const o=JSON.parse(i);$('#jout').textContent=JSON.stringify(o,null,n);$('#jst').innerHTML='<span style="color:var(--ok)">✓ Valid JSON</span>'}catch(e){$('#jout').textContent='';$('#jst').innerHTML='<span style="color:var(--danger)">✗ '+e.message+'</span>'}}
-function copyOut(){navigator.clipboard?.writeText($('#jout').textContent).then(()=>toast('Copied'),()=>toast('Copy not allowed here'))}
-fmt(2);
-
-/* donations */
-let freq='m',amt=25;const imp={5:'Runs the online compiler for 500 learners',10:'Funds a month of daily challenges',25:'Adds $25 to next month’s prize pool',50:'Sponsors a learner’s House Pass for a year',100:'Pays for a new full-length YouTube course',250:'Puts your name on the Sponsor Wall'};
-function drawAmt(){$('#amts').innerHTML=Object.keys(imp).map(a=>`<button class="amt ${+a===amt?'on':''}" data-a="${a}">$${a}</button>`).join('');$('#impact').textContent='→ '+imp[amt];$('#donateBtn').textContent=`Donate $${amt} ${freq==='m'?'monthly':'once'}`}
-$('#amts').onclick=e=>{const b=e.target.closest('.amt');if(b){amt=+b.dataset.a;drawAmt()}};
-$$('.toggle button').forEach(b=>b.onclick=()=>{$$('.toggle button').forEach(x=>x.classList.remove('on'));b.classList.add('on');freq=b.dataset.f;drawAmt()});
-drawAmt();
-
-/* palette */
-const pages=[['Get a Build Quote','build','Lead'],['JSON Formatter','tools','Tool'],['Support Code.House','support','Donate'],['Frontend Roadmap','home|learn','Roadmap'],['AI Build Challenge','home|contests','Contest'],['Developer Jobs','home|jobs','Jobs'],['Home','home','Page']];
-function openPalette(){$('#palette').classList.add('open');$('#pin').value='';drawP('');setTimeout(()=>$('#pin').focus(),20)}
-function closePalette(){$('#palette').classList.remove('open')}
-function drawP(q){$('#plist').innerHTML=pages.filter(p=>p[0].toLowerCase().includes(q.toLowerCase())).map(p=>`<li data-t="${p[1]}">${p[0]}<span>${p[2]}</span></li>`).join('')||'<li>No results</li>'}
-$('#pin').oninput=e=>drawP(e.target.value);
-$('#plist').onclick=e=>{const l=e.target.closest('li[data-t]');if(l){const [v,s]=l.dataset.t.split('|');closePalette();go(v,s)}};
-document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();openPalette()}if(e.key==='Escape')closePalette()});
-
-/* floating cta */
-addEventListener('scroll',()=>$('#floatCta').classList.toggle('vis',scrollY>700&&!$('#v-build').classList.contains('show')));
-</script>
 </body>
 </html>
